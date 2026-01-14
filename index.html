@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makilesh M | AI/ML Engineer & LLM Specialist</title>
+    <meta name="description" content="AI/ML Engineer | Data Scientist | LLM Specialist - Oracle-certified AI professional with production expertise in building and deploying LLM, RAG, multi-agent frameworks and real-time voice AI.">
+    <meta name="keywords" content="AI Engineer, Machine Learning, LLM, RAG, Python, Deep Learning, NLP">
+    <meta property="og:title" content="Makilesh M | AI/ML Engineer & LLM Specialist">
+    <meta property="og:description" content="Oracle-certified AI professional with production expertise in building and deploying LLM, RAG, multi-agent frameworks and real-time voice AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://makilesh.github.io">
+    <link rel="canonical" href="https://makilesh.github.io">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #111113;
+            --bg-tertiary: #18181b;
+            --bg-card: #1c1c1f;
+            --bg-card-hover: #222226;
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
+            --accent: #818cf8;
+            --accent-hover: #6366f1;
+            --accent-glow: rgba(129, 140, 248, 0.15);
+            --border: #27272a;
+            --border-light: #3f3f46;
+            --gradient-1: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
+            --gradient-2: linear-gradient(135deg, #0a0a0b 0%, #18181b 100%);
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
+            --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+            --shadow-glow: 0 0 40px var(--accent-glow);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Background Effects */
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .bg-gradient::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(129, 140, 248, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 70% 80%, rgba(192, 132, 252, 0.06) 0%, transparent 40%);
+            animation: bgFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes bgFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-2%, -2%) rotate(1deg); }
+        }
+
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.03;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Main Layout */
+        .main-wrapper {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 48px;
+            padding: 48px 0;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 1024px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 24px 0;
+            }
+        }
+
+        /* Sidebar */
+        .sidebar {
+            position: sticky;
+            top: 48px;
+            height: fit-content;
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar {
+                position: relative;
+                top: 0;
+            }
+        }
+
+        .profile-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile-image-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 24px;
+        }
+
+        .profile-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--border);
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .profile-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: var(--gradient-1);
+            z-index: -1;
+            opacity: 0.5;
+            filter: blur(12px);
+        }
+
+        .profile-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .profile-pronouns {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--bg-tertiary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .profile-pronouns svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .profile-title {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            line-height: 1.5;
+        }
+
+        .profile-divider {
+            height: 1px;
+            background: var(--border);
+            margin: 24px 0;
+        }
+
+        .profile-section {
+            text-align: left;
+            margin-bottom: 24px;
+        }
+
+        .profile-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .profile-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .profile-about {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            background: var(--bg-tertiary);
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+            transform: translateX(4px);
+        }
+
+        .contact-item svg {
+            width: 16px;
+            height: 16px;
+            flex-shrink: 0;
+            color: var(--accent);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 6px 12px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-glow);
+        }
+
+        /* Main Content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+        }
+
+        /* Intro Section */
+        .intro-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+        }
+
+        .intro-text p {
+            margin-bottom: 16px;
+        }
+
+        .intro-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .project-thumbnail {
+            height: 180px;
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-thumbnail::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .project-icon {
+            font-size: 64px;
+            z-index: 1;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .project-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .project-tag {
+            font-size: 11px;
+            padding: 4px 10px;
+            background: var(--accent-glow);
+            color: var(--accent);
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .project-tech-tag {
+            font-size: 11px;
+            padding: 4px 8px;
+            background: var(--bg-tertiary);
+            border-radius: 6px;
+            color: var(--text-muted);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .project-link:hover {
+            gap: 10px;
+        }
+
+        .project-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Experience Cards */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .experience-card {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .experience-card:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+
+        .experience-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            background: var(--gradient-1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .experience-content {
+            flex: 1;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .experience-period {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'Space Mono', monospace;
+            white-space: nowrap;
+        }
+
+        .experience-company {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .experience-location {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .experience-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .experience-description li {
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 16px;
+        }
+
+        /* Education Cards */
+        .education-card {
+            display: flex;
+            gap: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: var(--transition);
+        }
+
+        .education-card:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+
+        .education-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .education-content {
+            flex: 1;
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .education-degree {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .education-period {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .education-school {
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .education-location {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .education-details {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* Certifications */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .certification-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            transition: var(--transition);
+        }
+
+        .certification-card:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+
+        .certification-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .certification-icon.oracle {
+            background: linear-gradient(135deg, #f80000 0%, #c40000 100%);
+        }
+
+        .certification-icon.udemy {
+            background: linear-gradient(135deg, #a435f0 0%, #8710d8 100%);
+        }
+
+        .certification-icon.nptel {
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+        }
+
+        .certification-content {
+            flex: 1;
+        }
+
+        .certification-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+
+        .certification-issuer {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Hackathons */
+        .hackathons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .hackathon-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hackathon-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+        }
+
+        .hackathon-card:hover {
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
+        }
+
+        .hackathon-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, rgba(234, 179, 8, 0.2) 0%, rgba(234, 179, 8, 0.1) 100%);
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            border-radius: 20px;
+            font-size: 12px;
+            color: #fbbf24;
+            margin-bottom: 16px;
+        }
+
+        .hackathon-badge svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .hackathon-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .hackathon-role {
+            font-size: 13px;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .hackathon-description {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 20px;
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .contact-card-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: var(--radius-sm);
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .contact-card:hover .contact-card-icon {
+            background: var(--accent);
+            color: white;
+        }
+
+        .contact-card-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .contact-card-content {
+            flex: 1;
+        }
+
+        .contact-card-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .contact-card-value {
+            font-size: 14px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            border-top: 1px solid var(--border);
+            margin-top: 48px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-text a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer-text a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .profile-card {
+                padding: 24px;
+            }
+
+            .experience-card,
+            .education-card {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .experience-header,
+            .education-header {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+        }
+
+        /* Animations on scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    <div class="noise-overlay"></div>
+
+    <div class="container">
+        <div class="main-wrapper">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile-card">
+                    <div class="profile-image-wrapper">
+                        <div class="profile-image">M</div>
+                    </div>
+                    
+                    <h1 class="profile-name">Makilesh M</h1>
+                    
+                    <span class="profile-pronouns">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        he/him
+                    </span>
+                    
+                    <p class="profile-title">AI/ML Engineer | Data Scientist | LLM Specialist</p>
+                    
+                    <div class="profile-divider"></div>
+                    
+                    <div class="profile-section">
+                        <h3 class="profile-section-title">About</h3>
+                        <p class="profile-about">Oracle-certified AI professional with production expertise in building and deploying LLM, RAG, multi-agent frameworks and real-time voice AI with proven ability to lead technical teams and deliver AI solutions with measurable business impact.</p>
+                    </div>
+                    
+                    <div class="profile-divider"></div>
+                    
+                    <div class="profile-section">
+                        <h3 class="profile-section-title">Contact</h3>
+                        <div class="contact-list">
+                            <a href="mailto:makilesh24225@gmail.com" class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                                makilesh24225@gmail.com
+                            </a>
+                            <a href="tel:+919894419452" class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                +91 98944 19452
+                            </a>
+                            <a href="https://linkedin.com/in/makilesh/" target="_blank" class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                                linkedin.com/in/makilesh
+                            </a>
+                            <a href="https://github.com/Makilesh/" target="_blank" class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                                github.com/Makilesh
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-divider"></div>
+                    
+                    <div class="profile-section">
+                        <h3 class="profile-section-title">Core Skills</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">LLMs</span>
+                            <span class="skill-tag">RAG</span>
+                            <span class="skill-tag">LangChain</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">NLP</span>
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">Multi-Agent</span>
+                            <span class="skill-tag">Voice AI</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-divider"></div>
+                    
+                    <div class="profile-section">
+                        <h3 class="profile-section-title">Languages</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">English</span>
+                            <span class="skill-tag">Tamil</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Intro -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Intro</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="intro-text">
+                        <p>I'm Makilesh M, an AI/ML Engineer from Coimbatore, India, currently pursuing my B.E. in Computer Science at Sri Krishna College of Engineering and Technology. My expertise lies in developing innovative AI solutions, particularly in building production-grade LLM applications, RAG systems, and real-time voice AI agents.</p>
+                        <p>With hands-on experience in multi-agent frameworks like LangChain, LangGraph, and CrewAI, I specialize in creating intelligent systems that solve real-world problems. From automating legal document processing to building voice agents with sub-200ms latency, I focus on delivering AI solutions with measurable business impact.</p>
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Projects</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="projects-grid">
+                        <a href="https://github.com/Makilesh/AI_Legal_Engine" target="_blank" class="project-card">
+                            <div class="project-thumbnail">
+                                <span class="project-icon">⚖️</span>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-date">Jun 2025</span>
+                                    <span class="project-tag">Legal AI</span>
+                                </div>
+                                <h3 class="project-title">AI-Powered Legal Engine</h3>
+                                <p class="project-description">Built an AI legal assistant for Indian criminal law using RAG architecture with ChromaDB and Gemini, enabling semantic search across 673 legal documents with multi-agent LangChain system.</p>
+                                <div class="project-tech">
+                                    <span class="project-tech-tag">LangChain</span>
+                                    <span class="project-tech-tag">ChromaDB</span>
+                                    <span class="project-tech-tag">FastAPI</span>
+                                    <span class="project-tech-tag">Redis</span>
+                                    <span class="project-tech-tag">WebSocket</span>
+                                </div>
+                                <span class="project-link">
+                                    View on GitHub
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/Makilesh/voice_engine_MVP" target="_blank" class="project-card">
+                            <div class="project-thumbnail" style="background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);">
+                                <span class="project-icon">🎙️</span>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-date">Sep - Oct 2025</span>
+                                    <span class="project-tag">Voice AI</span>
+                                </div>
+                                <h3 class="project-title">AI-Powered Voice Agent</h3>
+                                <p class="project-description">Production-grade real-time bidirectional voice agent achieving &lt;200ms latency with sentiment-aware conversation, multi-threaded barge-in detection, and adaptive tone modulation.</p>
+                                <div class="project-tech">
+                                    <span class="project-tech-tag">Python</span>
+                                    <span class="project-tech-tag">Llama 3</span>
+                                    <span class="project-tech-tag">Whisper</span>
+                                    <span class="project-tech-tag">AsyncIO</span>
+                                    <span class="project-tech-tag">Threading</span>
+                                </div>
+                                <span class="project-link">
+                                    View on GitHub
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Experience -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Experience</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="experience-list">
+                        <div class="experience-card">
+                            <div class="experience-logo">ST</div>
+                            <div class="experience-content">
+                                <div class="experience-header">
+                                    <h3 class="experience-title">AI-Developer Intern</h3>
+                                    <span class="experience-period">Sep 2025 - Present</span>
+                                </div>
+                                <p class="experience-company">Shamla Tech Solutions</p>
+                                <p class="experience-location">Coimbatore, India</p>
+                                <ul class="experience-description">
+                                    <li>Designed and deployed an AI Voice Calling Agent with Twilio integration storing conversation history in Pinecone vector database, enabling context-aware automation of 100+ weekly outbound calls with dynamic response generation, reducing manual call handling time by 80%</li>
+                                    <li>Built a Cross-platform Meeting Assistant with real-time speaker diarization processing 50+ hours of meeting transcriptions weekly across Zoom, Google Meet, and in-person sessions</li>
+                                    <li>Engineered end-to-end Multi-source Lead Generation Pipeline with 3-stage AI qualification achieving 94.6% cost savings via batch processing and concurrent async scraping across Reddit, Discord, Slack, LinkedIn</li>
+                                </ul>
+                                <div class="experience-tech">
+                                    <span class="project-tech-tag">Twilio</span>
+                                    <span class="project-tech-tag">Pinecone</span>
+                                    <span class="project-tech-tag">LangChain</span>
+                                    <span class="project-tech-tag">Whisper</span>
+                                    <span class="project-tech-tag">OpenAI</span>
+                                    <span class="project-tech-tag">Selenium</span>
+                                    <span class="project-tech-tag">AsyncIO</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Education</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="experience-list">
+                        <div class="education-card">
+                            <div class="education-logo">🎓</div>
+                            <div class="education-content">
+                                <div class="education-header">
+                                    <h3 class="education-degree">B.E. in Computer Science Engineering</h3>
+                                    <span class="education-period">Expected Jun 2026</span>
+                                </div>
+                                <p class="education-school">Sri Krishna College of Engineering and Technology</p>
+                                <p class="education-location">Coimbatore, India</p>
+                                <p class="education-details">CGPA: 8.0 | Specializing in AI/ML and Data Science</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Certifications</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="certifications-grid">
+                        <div class="certification-card">
+                            <div class="certification-icon oracle">🔴</div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">OCI 2025 Certified Generative AI Professional</h4>
+                                <p class="certification-issuer">Oracle • 2025</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-icon oracle">🔴</div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">OCI 2025 Certified Data Science Professional</h4>
+                                <p class="certification-issuer">Oracle • 2025</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-icon udemy">🟣</div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">Complete Machine Learning, NLP Bootcamp</h4>
+                                <p class="certification-issuer">Udemy • 2024</p>
+                            </div>
+                        </div>
+                        <div class="certification-card">
+                            <div class="certification-icon nptel">🔵</div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">Python for Data Science</h4>
+                                <p class="certification-issuer">NPTEL • 2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Hackathons -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Hackathons</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="hackathons-grid">
+                        <div class="hackathon-card">
+                            <div class="hackathon-badge">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                Finalist 2024
+                            </div>
+                            <h3 class="hackathon-name">IMPACT X</h3>
+                            <p class="hackathon-role">Team Lead • Full-Stack Developer • AI Engineer</p>
+                            <p class="hackathon-description">Led a team of 4 to develop an AI-Powered Crime Detection System using YOLOv8 and CNNs for real-time video analysis and threat identification.</p>
+                        </div>
+                        <div class="hackathon-card">
+                            <div class="hackathon-badge">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                Finalist 2025
+                            </div>
+                            <h3 class="hackathon-name">THIRAN</h3>
+                            <p class="hackathon-role">Data Scientist • Data Engineer</p>
+                            <p class="hackathon-description">Developed AI Legal Engine with RAG architecture achieving semantic search across 673+ legal documents for Indian criminal law assistance.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="section">
+                    <div class="section-header">
+                        <h2 class="section-title">Get in Touch</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="contact-grid">
+                        <a href="mailto:makilesh24225@gmail.com" class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                                </svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <p class="contact-card-label">Email</p>
+                                <p class="contact-card-value">makilesh24225@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="tel:+919894419452" class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <p class="contact-card-label">Phone</p>
+                                <p class="contact-card-value">+91 98944 19452</p>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/makilesh/" target="_blank" class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <p class="contact-card-label">LinkedIn</p>
+                                <p class="contact-card-value">/in/makilesh</p>
+                            </div>
+                        </a>
+                        <a href="https://github.com/Makilesh/" target="_blank" class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <p class="contact-card-label">GitHub</p>
+                                <p class="contact-card-value">/Makilesh</p>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p class="footer-text">© 2025 Makilesh M. Built with ❤️ | <a href="https://github.com/Makilesh" target="_blank">View Source</a></p>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.classList.add('animate-on-scroll');
+            observer.observe(section);
+        });
+
+        // Smooth hover effects for cards
+        document.querySelectorAll('.project-card, .contact-card').forEach(card => {
+            card.addEventListener('mouseenter', function(e) {
+                this.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', function(e) {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Add dynamic greeting based on time
+        const hour = new Date().getHours();
+        let greeting = 'Hello';
+        if (hour < 12) greeting = 'Good morning';
+        else if (hour < 18) greeting = 'Good afternoon';
+        else greeting = 'Good evening';
+        
+        console.log(`${greeting}! Welcome to Makilesh's portfolio.`);
+    </script>
+</body>
+</html>
