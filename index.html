@@ -309,6 +309,38 @@
             line-height: 1;
         }
 
+        /* Social Media Icons */
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-2xl);
+            padding-top: var(--spacing-2xl);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-sm);
+            background: var(--bg-tag);
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--bg-tag-hover);
+            color: var(--text-primary);
+        }
+
+        .social-link svg {
+            width: 18px;
+            height: 18px;
+        }
+
         /* ========================================
            MAIN CONTENT
            ======================================== */
