@@ -4,48 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Makilesh M | AI/ML Engineer & LLM Specialist</title>
-    <meta name="description" content="AI/ML Engineer | Data Scientist | LLM Specialist - Oracle-certified AI professional with production expertise in building and deploying LLM, RAG, multi-agent frameworks and real-time voice AI.">
-    <meta name="keywords" content="AI Engineer, Machine Learning, LLM, RAG, Python, Deep Learning, NLP">
+    <meta name="description" content="AI/ML Engineer | Data Scientist | LLM Specialist - Oracle-certified AI professional with production expertise in LLM, RAG, multi-agent frameworks and real-time voice AI.">
     <meta property="og:title" content="Makilesh M | AI/ML Engineer & LLM Specialist">
     <meta property="og:description" content="Oracle-certified AI professional with production expertise in building and deploying LLM, RAG, multi-agent frameworks and real-time voice AI.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://makilesh.github.io">
     <link rel="canonical" href="https://makilesh.github.io">
     
-    <!-- Fonts -->
+    <!-- Inter Font - matches Resumx exactly -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* ========================================
+           CSS VARIABLES - Matching Resumx exactly
+           ======================================== */
         :root {
-            --bg-primary: #0a0a0b;
-            --bg-secondary: #111113;
-            --bg-tertiary: #18181b;
-            --bg-card: #1c1c1f;
-            --bg-card-hover: #222226;
-            --text-primary: #fafafa;
-            --text-secondary: #a1a1aa;
-            --text-muted: #71717a;
-            --accent: #818cf8;
-            --accent-hover: #6366f1;
-            --accent-glow: rgba(129, 140, 248, 0.15);
-            --border: #27272a;
-            --border-light: #3f3f46;
-            --gradient-1: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #f472b6 100%);
-            --gradient-2: linear-gradient(135deg, #0a0a0b 0%, #18181b 100%);
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
-            --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
-            --shadow-glow: 0 0 40px var(--accent-glow);
+            /* Background colors - Resumx uses very dark grays */
+            --bg-page: #0c0c0c;
+            --bg-card: #141414;
+            --bg-card-hover: #1a1a1a;
+            --bg-tag: #1f1f1f;
+            --bg-tag-hover: #2a2a2a;
+            
+            /* Text colors */
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            
+            /* Border colors */
+            --border-color: #222222;
+            --border-light: #333333;
+            
+            /* Spacing - Resumx uses consistent spacing */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 12px;
+            --spacing-lg: 16px;
+            --spacing-xl: 20px;
+            --spacing-2xl: 24px;
+            --spacing-3xl: 32px;
+            --spacing-4xl: 48px;
+            
+            /* Border radius - Resumx uses generous rounding */
             --radius-sm: 8px;
             --radius-md: 12px;
-            --radius-lg: 20px;
-            --radius-xl: 28px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-lg: 16px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+            
+            /* Typography - Inter like Resumx */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-size-xs: 11px;
+            --font-size-sm: 13px;
+            --font-size-base: 14px;
+            --font-size-md: 15px;
+            --font-size-lg: 16px;
+            --font-size-xl: 18px;
+            --font-size-2xl: 24px;
+            
+            /* Transitions */
+            --transition: all 0.2s ease;
         }
 
-        * {
+        /* ========================================
+           RESET & BASE STYLES
+           ======================================== */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -53,367 +79,276 @@
 
         html {
             scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         body {
-            font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
             line-height: 1.6;
-            overflow-x: hidden;
+            color: var(--text-primary);
+            background-color: var(--bg-page);
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-secondary);
+        ul, ol {
+            list-style: none;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--border-light);
-            border-radius: 4px;
+        img {
+            max-width: 100%;
+            display: block;
         }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--text-muted);
-        }
-
-        /* Background Effects */
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        .bg-gradient::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 20%, rgba(129, 140, 248, 0.08) 0%, transparent 40%),
-                        radial-gradient(circle at 70% 80%, rgba(192, 132, 252, 0.06) 0%, transparent 40%);
-            animation: bgFloat 20s ease-in-out infinite;
-        }
-
-        @keyframes bgFloat {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(-2%, -2%) rotate(1deg); }
-        }
-
-        .noise-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.03;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-        }
-
-        /* Container */
-        .container {
+        /* ========================================
+           LAYOUT - Two column like Resumx
+           ======================================== */
+        .page-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: var(--spacing-4xl) var(--spacing-2xl);
         }
 
-        /* Main Layout */
-        .main-wrapper {
+        .main-grid {
             display: grid;
-            grid-template-columns: 380px 1fr;
-            gap: 48px;
-            padding: 48px 0;
-            min-height: 100vh;
+            grid-template-columns: 340px 1fr;
+            gap: var(--spacing-4xl);
+            align-items: start;
         }
 
-        @media (max-width: 1024px) {
-            .main-wrapper {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                padding: 24px 0;
-            }
-        }
-
-        /* Sidebar */
+        /* ========================================
+           SIDEBAR - Profile Card (Resumx style)
+           ======================================== */
         .sidebar {
             position: sticky;
-            top: 48px;
-            height: fit-content;
-        }
-
-        @media (max-width: 1024px) {
-            .sidebar {
-                position: relative;
-                top: 0;
-            }
+            top: var(--spacing-4xl);
         }
 
         .profile-card {
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-xl);
-            padding: 32px;
-            text-align: center;
-            animation: fadeInUp 0.6s ease-out;
+            padding: var(--spacing-3xl);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .profile-image-wrapper {
-            position: relative;
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 24px;
+        /* Profile Image */
+        .profile-image-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--spacing-2xl);
         }
 
         .profile-image {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--border);
-            background: var(--gradient-1);
+            width: 120px;
+            height: 120px;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 700;
             color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            border: 3px solid var(--border-color);
         }
 
-        .profile-image-wrapper::after {
-            content: '';
-            position: absolute;
-            inset: -4px;
-            border-radius: 50%;
-            background: var(--gradient-1);
-            z-index: -1;
-            opacity: 0.5;
-            filter: blur(12px);
-        }
-
+        /* Name & Title */
         .profile-name {
-            font-size: 28px;
+            font-size: var(--font-size-2xl);
             font-weight: 700;
-            margin-bottom: 8px;
-            background: var(--gradient-1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            text-align: center;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
         }
 
         .profile-pronouns {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .pronouns-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            background: var(--bg-tertiary);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .profile-pronouns svg {
-            width: 14px;
-            height: 14px;
-        }
-
-        .profile-title {
-            font-size: 15px;
+            gap: var(--spacing-xs);
+            background: var(--bg-tag);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
             color: var(--text-secondary);
-            margin-bottom: 24px;
-            line-height: 1.5;
         }
 
-        .profile-divider {
+        .pronouns-badge svg {
+            width: 12px;
+            height: 12px;
+        }
+
+        /* Divider */
+        .divider {
             height: 1px;
-            background: var(--border);
-            margin: 24px 0;
+            background: var(--border-color);
+            margin: var(--spacing-2xl) 0;
         }
 
-        .profile-section {
-            text-align: left;
-            margin-bottom: 24px;
-        }
-
-        .profile-section:last-child {
-            margin-bottom: 0;
-        }
-
-        .profile-section-title {
-            font-size: 11px;
+        /* Section titles in sidebar */
+        .sidebar-section-title {
+            font-size: var(--font-size-xs);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             color: var(--text-muted);
-            margin-bottom: 12px;
+            margin-bottom: var(--spacing-md);
         }
 
-        .profile-about {
-            font-size: 14px;
+        /* About text */
+        .about-text {
+            font-size: var(--font-size-sm);
             color: var(--text-secondary);
             line-height: 1.7;
         }
 
+        /* Contact Links */
         .contact-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: var(--spacing-sm);
         }
 
-        .contact-item {
+        .contact-link {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 12px;
-            background: var(--bg-tertiary);
-            border-radius: var(--radius-sm);
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) var(--spacing-lg);
+            background: var(--bg-tag);
+            border-radius: var(--radius-md);
+            font-size: var(--font-size-sm);
             color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 13px;
             transition: var(--transition);
         }
 
-        .contact-item:hover {
-            background: var(--bg-card-hover);
+        .contact-link:hover {
+            background: var(--bg-tag-hover);
             color: var(--text-primary);
-            transform: translateX(4px);
         }
 
-        .contact-item svg {
+        .contact-link svg {
             width: 16px;
             height: 16px;
             flex-shrink: 0;
-            color: var(--accent);
+            opacity: 0.7;
         }
 
-        .skills-grid {
+        .contact-link:hover svg {
+            opacity: 1;
+        }
+
+        /* Skills Tags */
+        .skills-list {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: var(--spacing-sm);
         }
 
         .skill-tag {
-            padding: 6px 12px;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border);
-            border-radius: 20px;
-            font-size: 12px;
+            padding: var(--spacing-xs) var(--spacing-md);
+            background: var(--bg-tag);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
             color: var(--text-secondary);
             transition: var(--transition);
         }
 
         .skill-tag:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--accent-glow);
+            background: var(--bg-tag-hover);
+            color: var(--text-primary);
         }
 
-        /* Main Content */
+        /* Languages */
+        .languages-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+        }
+
+        .language-item {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+        }
+
+        /* ========================================
+           MAIN CONTENT
+           ======================================== */
         .main-content {
             display: flex;
             flex-direction: column;
-            gap: 48px;
+            gap: var(--spacing-4xl);
         }
 
-        .section {
-            animation: fadeInUp 0.6s ease-out backwards;
-        }
-
-        .section:nth-child(1) { animation-delay: 0.1s; }
-        .section:nth-child(2) { animation-delay: 0.2s; }
-        .section:nth-child(3) { animation-delay: 0.3s; }
-        .section:nth-child(4) { animation-delay: 0.4s; }
-        .section:nth-child(5) { animation-delay: 0.5s; }
-        .section:nth-child(6) { animation-delay: 0.6s; }
-
+        /* Section Header */
         .section-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 24px;
+            margin-bottom: var(--spacing-2xl);
         }
 
         .section-title {
-            font-size: 22px;
+            font-size: var(--font-size-lg);
             font-weight: 600;
             color: var(--text-primary);
         }
 
-        .section-line {
-            flex: 1;
-            height: 1px;
-            background: linear-gradient(90deg, var(--border) 0%, transparent 100%);
+        /* ========================================
+           INTRO SECTION
+           ======================================== */
+        .intro-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
         }
 
-        /* Intro Section */
         .intro-text {
-            font-size: 16px;
+            font-size: var(--font-size-md);
             color: var(--text-secondary);
             line-height: 1.8;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 28px;
         }
 
         .intro-text p {
-            margin-bottom: 16px;
+            margin-bottom: var(--spacing-lg);
         }
 
         .intro-text p:last-child {
             margin-bottom: 0;
         }
 
-        /* Project Cards */
+        /* ========================================
+           PROJECTS SECTION - Resumx grid style
+           ======================================== */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
         }
 
         .project-card {
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
             overflow: hidden;
             transition: var(--transition);
             cursor: pointer;
-            text-decoration: none;
-            color: inherit;
         }
 
         .project-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-glow);
+            border-color: var(--border-light);
+            transform: translateY(-2px);
         }
 
         .project-thumbnail {
-            height: 180px;
-            background: var(--gradient-1);
+            height: 160px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -421,125 +356,93 @@
             overflow: hidden;
         }
 
-        .project-thumbnail::before {
-            content: '';
+        .project-thumbnail-bg {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+            opacity: 0.9;
         }
 
-        .project-icon {
-            font-size: 64px;
+        .project-thumbnail-icon {
+            position: relative;
             z-index: 1;
+            width: 64px;
+            height: 64px;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
         }
 
         .project-content {
-            padding: 20px;
+            padding: var(--spacing-xl);
         }
 
         .project-meta {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
         }
 
         .project-date {
-            font-size: 12px;
+            font-size: var(--font-size-xs);
             color: var(--text-muted);
-            font-family: 'Space Mono', monospace;
         }
 
-        .project-tag {
-            font-size: 11px;
-            padding: 4px 10px;
-            background: var(--accent-glow);
-            color: var(--accent);
-            border-radius: 12px;
-            font-weight: 500;
+        .project-category {
+            font-size: var(--font-size-xs);
+            color: var(--text-muted);
         }
 
         .project-title {
-            font-size: 18px;
+            font-size: var(--font-size-lg);
             font-weight: 600;
-            margin-bottom: 10px;
             color: var(--text-primary);
+            margin-bottom: var(--spacing-sm);
         }
 
-        .project-description {
-            font-size: 13px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .project-tech-tag {
-            font-size: 11px;
-            padding: 4px 8px;
-            background: var(--bg-tertiary);
-            border-radius: 6px;
+        .project-role {
+            font-size: var(--font-size-sm);
             color: var(--text-muted);
-            font-family: 'Space Mono', monospace;
+            line-height: 1.5;
         }
 
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 16px;
-            font-size: 13px;
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .project-link:hover {
-            gap: 10px;
-        }
-
-        .project-link svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Experience Cards */
+        /* ========================================
+           EXPERIENCE SECTION - Resumx style cards
+           ======================================== */
         .experience-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: var(--spacing-lg);
         }
 
         .experience-card {
-            display: flex;
-            gap: 20px;
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-            padding: 24px;
+            padding: var(--spacing-2xl);
+            display: flex;
+            gap: var(--spacing-xl);
             transition: var(--transition);
         }
 
         .experience-card:hover {
             border-color: var(--border-light);
-            background: var(--bg-card-hover);
         }
 
         .experience-logo {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             border-radius: var(--radius-md);
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: var(--font-size-lg);
             font-weight: 700;
             color: white;
             flex-shrink: 0;
@@ -547,85 +450,74 @@
 
         .experience-content {
             flex: 1;
+            min-width: 0;
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xs);
         }
 
         .experience-title {
-            font-size: 17px;
+            font-size: var(--font-size-lg);
             font-weight: 600;
             color: var(--text-primary);
         }
 
         .experience-period {
-            font-size: 12px;
+            font-size: var(--font-size-xs);
             color: var(--text-muted);
-            font-family: 'Space Mono', monospace;
             white-space: nowrap;
         }
 
         .experience-company {
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 4px;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
         }
 
         .experience-location {
-            font-size: 13px;
+            font-size: var(--font-size-sm);
             color: var(--text-muted);
-            margin-bottom: 12px;
+            margin-bottom: var(--spacing-lg);
         }
 
         .experience-description {
-            font-size: 14px;
+            font-size: var(--font-size-sm);
             color: var(--text-secondary);
             line-height: 1.7;
         }
 
-        .experience-description li {
-            margin-bottom: 8px;
-            padding-left: 4px;
-        }
-
-        .experience-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 16px;
-        }
-
-        /* Education Cards */
+        /* ========================================
+           EDUCATION SECTION
+           ======================================== */
         .education-card {
-            display: flex;
-            gap: 20px;
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-            padding: 24px;
+            padding: var(--spacing-2xl);
+            display: flex;
+            gap: var(--spacing-xl);
             transition: var(--transition);
         }
 
         .education-card:hover {
             border-color: var(--border-light);
-            background: var(--bg-card-hover);
         }
 
         .education-logo {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             border-radius: var(--radius-md);
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: 20px;
             flex-shrink: 0;
         }
 
@@ -637,376 +529,401 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xs);
         }
 
         .education-degree {
-            font-size: 17px;
+            font-size: var(--font-size-lg);
             font-weight: 600;
             color: var(--text-primary);
         }
 
         .education-period {
-            font-size: 12px;
+            font-size: var(--font-size-xs);
             color: var(--text-muted);
-            font-family: 'Space Mono', monospace;
+            white-space: nowrap;
         }
 
         .education-school {
-            font-size: 14px;
-            color: var(--accent);
-            margin-bottom: 4px;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-xs);
         }
 
         .education-location {
-            font-size: 13px;
+            font-size: var(--font-size-sm);
             color: var(--text-muted);
-            margin-bottom: 12px;
+            margin-bottom: var(--spacing-md);
         }
 
         .education-details {
-            font-size: 14px;
+            font-size: var(--font-size-sm);
             color: var(--text-secondary);
         }
 
-        /* Certifications */
+        /* ========================================
+           CERTIFICATIONS - Resumx style
+           ======================================== */
         .certifications-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
         }
 
         .certification-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
             display: flex;
             align-items: center;
-            gap: 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 20px;
+            gap: var(--spacing-lg);
             transition: var(--transition);
         }
 
         .certification-card:hover {
             border-color: var(--border-light);
-            background: var(--bg-card-hover);
         }
 
-        .certification-icon {
-            width: 48px;
-            height: 48px;
+        .certification-logo {
+            width: 40px;
+            height: 40px;
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
             flex-shrink: 0;
         }
 
-        .certification-icon.oracle {
-            background: linear-gradient(135deg, #f80000 0%, #c40000 100%);
+        .certification-logo.oracle {
+            background: linear-gradient(135deg, #c74634 0%, #f80000 100%);
         }
 
-        .certification-icon.udemy {
+        .certification-logo.udemy {
             background: linear-gradient(135deg, #a435f0 0%, #8710d8 100%);
         }
 
-        .certification-icon.nptel {
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+        .certification-logo.nptel {
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+        }
+
+        .certification-logo svg {
+            width: 20px;
+            height: 20px;
+            color: white;
         }
 
         .certification-content {
             flex: 1;
+            min-width: 0;
         }
 
         .certification-title {
-            font-size: 14px;
-            font-weight: 600;
+            font-size: var(--font-size-sm);
+            font-weight: 500;
             color: var(--text-primary);
-            margin-bottom: 4px;
+            margin-bottom: var(--spacing-xs);
             line-height: 1.4;
         }
 
         .certification-issuer {
-            font-size: 12px;
+            font-size: var(--font-size-xs);
             color: var(--text-muted);
         }
 
-        /* Hackathons */
+        /* ========================================
+           HACKATHONS SECTION
+           ======================================== */
         .hackathons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
         }
 
         .hackathon-card {
             background: var(--bg-card);
-            border: 1px solid var(--border);
+            border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
-            padding: 24px;
+            padding: var(--spacing-2xl);
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hackathon-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-1);
         }
 
         .hackathon-card:hover {
             border-color: var(--border-light);
-            background: var(--bg-card-hover);
         }
 
         .hackathon-badge {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 6px 12px;
-            background: linear-gradient(135deg, rgba(234, 179, 8, 0.2) 0%, rgba(234, 179, 8, 0.1) 100%);
-            border: 1px solid rgba(234, 179, 8, 0.3);
-            border-radius: 20px;
-            font-size: 12px;
-            color: #fbbf24;
-            margin-bottom: 16px;
+            gap: var(--spacing-sm);
+            background: rgba(234, 179, 8, 0.1);
+            border: 1px solid rgba(234, 179, 8, 0.2);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            color: #eab308;
+            margin-bottom: var(--spacing-lg);
         }
 
         .hackathon-badge svg {
-            width: 14px;
-            height: 14px;
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
         }
 
         .hackathon-name {
-            font-size: 18px;
+            font-size: var(--font-size-xl);
             font-weight: 600;
             color: var(--text-primary);
-            margin-bottom: 8px;
+            margin-bottom: var(--spacing-sm);
         }
 
         .hackathon-role {
-            font-size: 13px;
-            color: var(--accent);
-            margin-bottom: 12px;
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
         }
 
         .hackathon-description {
-            font-size: 13px;
-            color: var(--text-secondary);
+            font-size: var(--font-size-sm);
+            color: var(--text-muted);
             line-height: 1.6;
         }
 
-        /* Contact Section */
+        /* ========================================
+           CONTACT SECTION - Resumx footer style
+           ======================================== */
         .contact-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-lg);
         }
 
         .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
             display: flex;
             align-items: center;
-            gap: 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-lg);
-            padding: 20px;
-            text-decoration: none;
-            color: inherit;
+            gap: var(--spacing-lg);
             transition: var(--transition);
         }
 
         .contact-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-glow);
+            border-color: var(--border-light);
+            background: var(--bg-card-hover);
         }
 
         .contact-card-icon {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
+            background: var(--bg-tag);
             border-radius: var(--radius-sm);
-            background: var(--bg-tertiary);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent);
-            transition: var(--transition);
-        }
-
-        .contact-card:hover .contact-card-icon {
-            background: var(--accent);
-            color: white;
+            flex-shrink: 0;
         }
 
         .contact-card-icon svg {
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
+            color: var(--text-secondary);
+        }
+
+        .contact-card:hover .contact-card-icon svg {
+            color: var(--text-primary);
         }
 
         .contact-card-content {
             flex: 1;
+            min-width: 0;
         }
 
         .contact-card-label {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: var(--font-size-xs);
             color: var(--text-muted);
-            margin-bottom: 4px;
+            margin-bottom: var(--spacing-xs);
         }
 
         .contact-card-value {
-            font-size: 14px;
-            color: var(--text-primary);
+            font-size: var(--font-size-sm);
             font-weight: 500;
+            color: var(--text-primary);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
-        /* Footer */
+        /* ========================================
+           FOOTER - Resumx style
+           ======================================== */
         .footer {
+            margin-top: var(--spacing-4xl);
+            padding-top: var(--spacing-2xl);
+            border-top: 1px solid var(--border-color);
             text-align: center;
-            padding: 48px 24px;
-            border-top: 1px solid var(--border);
-            margin-top: 48px;
         }
 
         .footer-text {
-            font-size: 13px;
+            font-size: var(--font-size-sm);
             color: var(--text-muted);
         }
 
         .footer-text a {
-            color: var(--accent);
-            text-decoration: none;
+            color: var(--text-secondary);
+            transition: var(--transition);
         }
 
         .footer-text a:hover {
-            text-decoration: underline;
+            color: var(--text-primary);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 16px;
+        /* ========================================
+           RESPONSIVE DESIGN
+           ======================================== */
+        @media (max-width: 1024px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-3xl);
+            }
+
+            .sidebar {
+                position: relative;
+                top: 0;
             }
 
             .profile-card {
-                padding: 24px;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .projects-grid,
+            .certifications-grid,
+            .hackathons-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-wrapper {
+                padding: var(--spacing-2xl) var(--spacing-lg);
             }
 
             .experience-card,
             .education-card {
                 flex-direction: column;
-                gap: 16px;
+                gap: var(--spacing-lg);
             }
 
             .experience-header,
             .education-header {
                 flex-direction: column;
-                gap: 8px;
+                gap: var(--spacing-sm);
             }
 
-            .projects-grid {
+            .experience-period,
+            .education-period {
+                align-self: flex-start;
+            }
+
+            .contact-grid {
                 grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-card {
+                padding: var(--spacing-2xl);
+            }
+
+            .profile-name {
+                font-size: var(--font-size-xl);
             }
 
             .section-title {
-                font-size: 18px;
+                font-size: var(--font-size-md);
             }
-        }
-
-        /* Animations on scroll */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .animate-on-scroll.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="bg-gradient"></div>
-    <div class="noise-overlay"></div>
-
-    <div class="container">
-        <div class="main-wrapper">
-            <!-- Sidebar -->
+    <div class="page-wrapper">
+        <div class="main-grid">
+            <!-- ========================================
+                 SIDEBAR - Profile Card (mirrors Resumx)
+                 ======================================== -->
             <aside class="sidebar">
                 <div class="profile-card">
-                    <div class="profile-image-wrapper">
+                    <!-- Profile Image -->
+                    <div class="profile-image-container">
                         <div class="profile-image">M</div>
                     </div>
-                    
+
+                    <!-- Name -->
                     <h1 class="profile-name">Makilesh M</h1>
-                    
-                    <span class="profile-pronouns">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                            <circle cx="12" cy="7" r="4"/>
-                        </svg>
-                        he/him
-                    </span>
-                    
-                    <p class="profile-title">AI/ML Engineer | Data Scientist | LLM Specialist</p>
-                    
-                    <div class="profile-divider"></div>
-                    
-                    <div class="profile-section">
-                        <h3 class="profile-section-title">About</h3>
-                        <p class="profile-about">Oracle-certified AI professional with production expertise in building and deploying LLM, RAG, multi-agent frameworks and real-time voice AI with proven ability to lead technical teams and deliver AI solutions with measurable business impact.</p>
+
+                    <!-- Pronouns Badge -->
+                    <div class="profile-pronouns">
+                        <span class="pronouns-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            he/him
+                        </span>
                     </div>
-                    
-                    <div class="profile-divider"></div>
-                    
-                    <div class="profile-section">
-                        <h3 class="profile-section-title">Contact</h3>
+
+                    <div class="divider"></div>
+
+                    <!-- About Section -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-section-title">About</h3>
+                        <p class="about-text">Oracle-certified AI professional with production expertise in building and deploying LLM, RAG, multi-agent frameworks and real-time voice AI with proven ability to lead technical teams and deliver AI solutions with measurable business impact.</p>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Contact Section -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-section-title">Contact</h3>
                         <div class="contact-list">
-                            <a href="mailto:makilesh24225@gmail.com" class="contact-item">
+                            <a href="mailto:makilesh24225@gmail.com" class="contact-link">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <rect x="2" y="4" width="20" height="16" rx="2"/>
                                     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                                 </svg>
                                 makilesh24225@gmail.com
                             </a>
-                            <a href="tel:+919894419452" class="contact-item">
+                            <a href="https://makilesh.github.io" class="contact-link">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                                makilesh.github.io
+                            </a>
+                            <a href="tel:+919894419452" class="contact-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                                 </svg>
                                 +91 98944 19452
                             </a>
-                            <a href="https://linkedin.com/in/makilesh/" target="_blank" class="contact-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                    <rect x="2" y="9" width="4" height="12"/>
-                                    <circle cx="4" cy="4" r="2"/>
-                                </svg>
-                                linkedin.com/in/makilesh
-                            </a>
-                            <a href="https://github.com/Makilesh/" target="_blank" class="contact-item">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                                </svg>
-                                github.com/Makilesh
-                            </a>
                         </div>
                     </div>
-                    
-                    <div class="profile-divider"></div>
-                    
-                    <div class="profile-section">
-                        <h3 class="profile-section-title">Core Skills</h3>
-                        <div class="skills-grid">
+
+                    <div class="divider"></div>
+
+                    <!-- Skills Section -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-section-title">Skills</h3>
+                        <div class="skills-list">
                             <span class="skill-tag">Python</span>
                             <span class="skill-tag">LLMs</span>
                             <span class="skill-tag">RAG</span>
@@ -1021,101 +938,87 @@
                             <span class="skill-tag">Docker</span>
                         </div>
                     </div>
-                    
-                    <div class="profile-divider"></div>
-                    
-                    <div class="profile-section">
-                        <h3 class="profile-section-title">Languages</h3>
-                        <div class="skills-grid">
-                            <span class="skill-tag">English</span>
-                            <span class="skill-tag">Tamil</span>
+
+                    <div class="divider"></div>
+
+                    <!-- Languages Section -->
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-section-title">Languages</h3>
+                        <div class="languages-list">
+                            <span class="language-item">English</span>
+                            <span class="language-item">Tamil</span>
                         </div>
                     </div>
                 </div>
             </aside>
 
-            <!-- Main Content -->
+            <!-- ========================================
+                 MAIN CONTENT (mirrors Resumx sections)
+                 ======================================== -->
             <main class="main-content">
-                <!-- Intro -->
-                <section class="section">
+                <!-- Intro Section -->
+                <section class="section" id="intro">
                     <div class="section-header">
                         <h2 class="section-title">Intro</h2>
-                        <div class="section-line"></div>
                     </div>
-                    <div class="intro-text">
-                        <p>I'm Makilesh M, an AI/ML Engineer from Coimbatore, India, currently pursuing my B.E. in Computer Science at Sri Krishna College of Engineering and Technology. My expertise lies in developing innovative AI solutions, particularly in building production-grade LLM applications, RAG systems, and real-time voice AI agents.</p>
-                        <p>With hands-on experience in multi-agent frameworks like LangChain, LangGraph, and CrewAI, I specialize in creating intelligent systems that solve real-world problems. From automating legal document processing to building voice agents with sub-200ms latency, I focus on delivering AI solutions with measurable business impact.</p>
+                    <div class="intro-card">
+                        <div class="intro-text">
+                            <p>I'm Makilesh M, an AI/ML Engineer from Coimbatore, India, currently pursuing my B.E. in Computer Science at Sri Krishna College of Engineering and Technology. My expertise lies in developing innovative AI solutions, particularly in building production-grade LLM applications, RAG systems, and real-time voice AI agents.</p>
+                            <p>With hands-on experience in multi-agent frameworks like LangChain, LangGraph, and CrewAI, I specialize in creating intelligent systems that solve real-world problems. From automating legal document processing to building voice agents with sub-200ms latency, I focus on delivering AI solutions with measurable business impact.</p>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Projects -->
-                <section class="section">
+                <!-- Projects Section -->
+                <section class="section" id="projects">
                     <div class="section-header">
                         <h2 class="section-title">Projects</h2>
-                        <div class="section-line"></div>
                     </div>
                     <div class="projects-grid">
+                        <!-- Project 1 -->
                         <a href="https://github.com/Makilesh/AI_Legal_Engine" target="_blank" class="project-card">
                             <div class="project-thumbnail">
-                                <span class="project-icon">⚖️</span>
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                <div class="project-thumbnail-icon">⚖️</div>
                             </div>
                             <div class="project-content">
                                 <div class="project-meta">
                                     <span class="project-date">Jun 2025</span>
-                                    <span class="project-tag">Legal AI</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">AI Developer</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">Legal AI</span>
                                 </div>
                                 <h3 class="project-title">AI-Powered Legal Engine</h3>
-                                <p class="project-description">Built an AI legal assistant for Indian criminal law using RAG architecture with ChromaDB and Gemini, enabling semantic search across 673 legal documents with multi-agent LangChain system.</p>
-                                <div class="project-tech">
-                                    <span class="project-tech-tag">LangChain</span>
-                                    <span class="project-tech-tag">ChromaDB</span>
-                                    <span class="project-tech-tag">FastAPI</span>
-                                    <span class="project-tech-tag">Redis</span>
-                                    <span class="project-tech-tag">WebSocket</span>
-                                </div>
-                                <span class="project-link">
-                                    View on GitHub
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                                    </svg>
-                                </span>
+                                <p class="project-role">RAG architecture with ChromaDB and Gemini enabling semantic search across 673 legal documents</p>
                             </div>
                         </a>
 
+                        <!-- Project 2 -->
                         <a href="https://github.com/Makilesh/voice_engine_MVP" target="_blank" class="project-card">
-                            <div class="project-thumbnail" style="background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);">
-                                <span class="project-icon">🎙️</span>
+                            <div class="project-thumbnail">
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);"></div>
+                                <div class="project-thumbnail-icon">🎙️</div>
                             </div>
                             <div class="project-content">
                                 <div class="project-meta">
                                     <span class="project-date">Sep - Oct 2025</span>
-                                    <span class="project-tag">Voice AI</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">AI Developer</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">Voice AI</span>
                                 </div>
                                 <h3 class="project-title">AI-Powered Voice Agent</h3>
-                                <p class="project-description">Production-grade real-time bidirectional voice agent achieving &lt;200ms latency with sentiment-aware conversation, multi-threaded barge-in detection, and adaptive tone modulation.</p>
-                                <div class="project-tech">
-                                    <span class="project-tech-tag">Python</span>
-                                    <span class="project-tech-tag">Llama 3</span>
-                                    <span class="project-tech-tag">Whisper</span>
-                                    <span class="project-tech-tag">AsyncIO</span>
-                                    <span class="project-tech-tag">Threading</span>
-                                </div>
-                                <span class="project-link">
-                                    View on GitHub
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                                    </svg>
-                                </span>
+                                <p class="project-role">Real-time bidirectional voice agent with &lt;200ms latency and sentiment-aware conversation</p>
                             </div>
                         </a>
                     </div>
                 </section>
 
-                <!-- Experience -->
-                <section class="section">
+                <!-- Experience Section -->
+                <section class="section" id="experience">
                     <div class="section-header">
                         <h2 class="section-title">Experience</h2>
-                        <div class="section-line"></div>
                     </div>
                     <div class="experience-list">
                         <div class="experience-card">
@@ -1127,97 +1030,85 @@
                                 </div>
                                 <p class="experience-company">Shamla Tech Solutions</p>
                                 <p class="experience-location">Coimbatore, India</p>
-                                <ul class="experience-description">
-                                    <li>Designed and deployed an AI Voice Calling Agent with Twilio integration storing conversation history in Pinecone vector database, enabling context-aware automation of 100+ weekly outbound calls with dynamic response generation, reducing manual call handling time by 80%</li>
-                                    <li>Built a Cross-platform Meeting Assistant with real-time speaker diarization processing 50+ hours of meeting transcriptions weekly across Zoom, Google Meet, and in-person sessions</li>
-                                    <li>Engineered end-to-end Multi-source Lead Generation Pipeline with 3-stage AI qualification achieving 94.6% cost savings via batch processing and concurrent async scraping across Reddit, Discord, Slack, LinkedIn</li>
-                                </ul>
-                                <div class="experience-tech">
-                                    <span class="project-tech-tag">Twilio</span>
-                                    <span class="project-tech-tag">Pinecone</span>
-                                    <span class="project-tech-tag">LangChain</span>
-                                    <span class="project-tech-tag">Whisper</span>
-                                    <span class="project-tech-tag">OpenAI</span>
-                                    <span class="project-tech-tag">Selenium</span>
-                                    <span class="project-tech-tag">AsyncIO</span>
-                                </div>
+                                <p class="experience-description">Designed and deployed AI Voice Calling Agent with Twilio integration enabling context-aware automation of 100+ weekly outbound calls, reducing manual handling by 80%. Built Cross-platform Meeting Assistant processing 50+ hours weekly. Engineered Multi-source Lead Generation Pipeline achieving 94.6% cost savings.</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Education -->
-                <section class="section">
+                <!-- Education Section -->
+                <section class="section" id="education">
                     <div class="section-header">
                         <h2 class="section-title">Education</h2>
-                        <div class="section-line"></div>
                     </div>
-                    <div class="experience-list">
-                        <div class="education-card">
-                            <div class="education-logo">🎓</div>
-                            <div class="education-content">
-                                <div class="education-header">
-                                    <h3 class="education-degree">B.E. in Computer Science Engineering</h3>
-                                    <span class="education-period">Expected Jun 2026</span>
-                                </div>
-                                <p class="education-school">Sri Krishna College of Engineering and Technology</p>
-                                <p class="education-location">Coimbatore, India</p>
-                                <p class="education-details">CGPA: 8.0 | Specializing in AI/ML and Data Science</p>
+                    <div class="education-card">
+                        <div class="education-logo">🎓</div>
+                        <div class="education-content">
+                            <div class="education-header">
+                                <h3 class="education-degree">B.E. in Computer Science Engineering</h3>
+                                <span class="education-period">Expected Jun 2026</span>
                             </div>
+                            <p class="education-school">Sri Krishna College of Engineering and Technology</p>
+                            <p class="education-location">Coimbatore, India</p>
+                            <p class="education-details">CGPA: 8.0 | Specializing in AI/ML and Data Science</p>
                         </div>
                     </div>
                 </section>
 
-                <!-- Certifications -->
-                <section class="section">
+                <!-- Certifications Section -->
+                <section class="section" id="certifications">
                     <div class="section-header">
-                        <h2 class="section-title">Certifications</h2>
-                        <div class="section-line"></div>
+                        <h2 class="section-title">License & Certification</h2>
                     </div>
                     <div class="certifications-grid">
                         <div class="certification-card">
-                            <div class="certification-icon oracle">🔴</div>
+                            <div class="certification-logo oracle">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 8.152c-2.17 0-3.924 1.755-3.924 3.924s1.755 3.924 3.924 3.924h9.848c2.17 0 3.924-1.755 3.924-3.924s-1.754-3.924-3.924-3.924H7.076zm9.848 6.304H7.076c-1.312 0-2.38-1.068-2.38-2.38s1.068-2.38 2.38-2.38h9.848c1.312 0 2.38 1.068 2.38 2.38s-1.068 2.38-2.38 2.38z"/></svg>
+                            </div>
                             <div class="certification-content">
                                 <h4 class="certification-title">OCI 2025 Certified Generative AI Professional</h4>
-                                <p class="certification-issuer">Oracle • 2025</p>
+                                <p class="certification-issuer">Issued 2025</p>
                             </div>
                         </div>
                         <div class="certification-card">
-                            <div class="certification-icon oracle">🔴</div>
+                            <div class="certification-logo oracle">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 8.152c-2.17 0-3.924 1.755-3.924 3.924s1.755 3.924 3.924 3.924h9.848c2.17 0 3.924-1.755 3.924-3.924s-1.754-3.924-3.924-3.924H7.076zm9.848 6.304H7.076c-1.312 0-2.38-1.068-2.38-2.38s1.068-2.38 2.38-2.38h9.848c1.312 0 2.38 1.068 2.38 2.38s-1.068 2.38-2.38 2.38z"/></svg>
+                            </div>
                             <div class="certification-content">
                                 <h4 class="certification-title">OCI 2025 Certified Data Science Professional</h4>
-                                <p class="certification-issuer">Oracle • 2025</p>
+                                <p class="certification-issuer">Issued 2025</p>
                             </div>
                         </div>
                         <div class="certification-card">
-                            <div class="certification-icon udemy">🟣</div>
+                            <div class="certification-logo udemy">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0L5.81 3.573v3.574l6.19-3.574 6.191 3.574V3.573zM5.81 10.148v8.144c0 1.85.589 3.243 1.741 4.234S10.177 24 11.99 24s3.195-.483 4.376-1.474 1.773-2.385 1.773-4.234v-8.144l-6.148 3.553z"/></svg>
+                            </div>
                             <div class="certification-content">
                                 <h4 class="certification-title">Complete Machine Learning, NLP Bootcamp</h4>
-                                <p class="certification-issuer">Udemy • 2024</p>
+                                <p class="certification-issuer">Issued 2024</p>
                             </div>
                         </div>
                         <div class="certification-card">
-                            <div class="certification-icon nptel">🔵</div>
+                            <div class="certification-logo nptel">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                            </div>
                             <div class="certification-content">
                                 <h4 class="certification-title">Python for Data Science</h4>
-                                <p class="certification-issuer">NPTEL • 2024</p>
+                                <p class="certification-issuer">Issued 2024</p>
                             </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- Hackathons -->
-                <section class="section">
+                <!-- Hackathons Section -->
+                <section class="section" id="hackathons">
                     <div class="section-header">
                         <h2 class="section-title">Hackathons</h2>
-                        <div class="section-line"></div>
                     </div>
                     <div class="hackathons-grid">
                         <div class="hackathon-card">
                             <div class="hackathon-badge">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                                 Finalist 2024
                             </div>
                             <h3 class="hackathon-name">IMPACT X</h3>
@@ -1226,9 +1117,7 @@
                         </div>
                         <div class="hackathon-card">
                             <div class="hackathon-badge">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-                                </svg>
+                                <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                                 Finalist 2025
                             </div>
                             <h3 class="hackathon-name">THIRAN</h3>
@@ -1239,10 +1128,9 @@
                 </section>
 
                 <!-- Contact Section -->
-                <section class="section">
+                <section class="section" id="contact">
                     <div class="section-header">
-                        <h2 class="section-title">Get in Touch</h2>
-                        <div class="section-line"></div>
+                        <h2 class="section-title">Contact</h2>
                     </div>
                     <div class="contact-grid">
                         <a href="mailto:makilesh24225@gmail.com" class="contact-card">
@@ -1260,12 +1148,24 @@
                         <a href="tel:+919894419452" class="contact-card">
                             <div class="contact-card-icon">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
                                 </svg>
                             </div>
                             <div class="contact-card-content">
                                 <p class="contact-card-label">Phone</p>
                                 <p class="contact-card-value">+91 98944 19452</p>
+                            </div>
+                        </a>
+                        <a href="https://makilesh.github.io" class="contact-card">
+                            <div class="contact-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                                </svg>
+                            </div>
+                            <div class="contact-card-content">
+                                <p class="contact-card-label">Website</p>
+                                <p class="contact-card-value">makilesh.github.io</p>
                             </div>
                         </a>
                         <a href="https://linkedin.com/in/makilesh/" target="_blank" class="contact-card">
@@ -1278,7 +1178,7 @@
                             </div>
                             <div class="contact-card-content">
                                 <p class="contact-card-label">LinkedIn</p>
-                                <p class="contact-card-value">/in/makilesh</p>
+                                <p class="contact-card-value">/makilesh</p>
                             </div>
                         </a>
                         <a href="https://github.com/Makilesh/" target="_blank" class="contact-card">
@@ -1294,53 +1194,13 @@
                         </a>
                     </div>
                 </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <p class="footer-text">© 2025 Makilesh M</p>
+                </footer>
             </main>
         </div>
     </div>
-
-    <footer class="footer">
-        <p class="footer-text">© 2025 Makilesh M. Built with ❤️ | <a href="https://github.com/Makilesh" target="_blank">View Source</a></p>
-    </footer>
-
-    <script>
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections
-        document.querySelectorAll('.section').forEach(section => {
-            section.classList.add('animate-on-scroll');
-            observer.observe(section);
-        });
-
-        // Smooth hover effects for cards
-        document.querySelectorAll('.project-card, .contact-card').forEach(card => {
-            card.addEventListener('mouseenter', function(e) {
-                this.style.transform = 'translateY(-4px)';
-            });
-            card.addEventListener('mouseleave', function(e) {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Add dynamic greeting based on time
-        const hour = new Date().getHours();
-        let greeting = 'Hello';
-        if (hour < 12) greeting = 'Good morning';
-        else if (hour < 18) greeting = 'Good afternoon';
-        else greeting = 'Good evening';
-        
-        console.log(`${greeting}! Welcome to Makilesh's portfolio.`);
-    </script>
 </body>
 </html>
