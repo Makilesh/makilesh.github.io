@@ -117,7 +117,7 @@
         .main-grid {
             display: grid;
             grid-template-columns: 340px 1fr;
-            gap: var(--spacing-4xl);
+            gap: 80px;
             align-items: start;
         }
 
@@ -126,15 +126,37 @@
            ======================================== */
         .sidebar {
             position: sticky;
-            top: var(--spacing-4xl);
+            top: 0;
+            padding-right: var(--spacing-lg);
+            height: 100vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* Custom scrollbar for sidebar */
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: var(--border-light);
         }
 
         .profile-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-xl);
-            padding: var(--spacing-3xl);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.06);
+            background: var(--bg-page);
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: none;
         }
 
         /* Profile Image */
