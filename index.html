@@ -126,7 +126,7 @@
            ======================================== */
         .sidebar {
             position: sticky;
-            padding: 20px 0;
+            padding: 40px 0;
             top: 0;
             padding-left: var(--spacing-2xl);
             padding-right: var(--spacing-2xl);
@@ -369,7 +369,7 @@
            MAIN CONTENT
            ======================================== */
         .main-content {
-            padding: 20px 0;
+            padding: 40px 0;
             display: flex;
             flex-direction: column;
             gap: var(--spacing-4xl);
@@ -907,6 +907,16 @@
         /* ========================================
            RESPONSIVE DESIGN
            ======================================== */
+                   @media (max-width: 1440px) {
+                    
+                 .main-content {
+            padding: 20px 0;
+        }
+
+             .sidebar {
+                padding: 20px 0;
+             }
+                   }
         @media (max-width: 1024px) {
             .main-grid {
                 grid-template-columns: 1fr;
@@ -917,6 +927,7 @@
                 position: relative;
                 top: 0;
             }
+
 
             .profile-card {
                 max-width: 400px;
@@ -987,7 +998,7 @@
                     <!-- Profile Image -->
                     <div class="profile-image-container">
                         <div class="profile-image">
-                            <img src="profile.svg" alt="Makilesh M Profile Photo" />
+                            <img src="profile.jpg" alt="Makilesh M Profile Photo" />
                         </div>
                     </div>
 
