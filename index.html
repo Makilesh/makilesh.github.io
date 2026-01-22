@@ -947,7 +947,8 @@
 
         @media (max-width: 768px) {
             .page-wrapper {
-                padding: var(--spacing-2xl) var(--spacing-lg);
+                padding: 32px;
+                max-width: 100%;
             }
 
             .experience-card,
@@ -955,7 +956,9 @@
                 flex-direction: column;
                 gap: var(--spacing-lg);
             }
-
+.main-grid{
+    padding-right: 0;
+}
             .experience-header,
             .education-header {
                 flex-direction: column;
@@ -974,7 +977,8 @@
 
         @media (max-width: 480px) {
             .profile-card {
-                padding: var(--spacing-2xl);
+                padding: 0;
+                max-width: 100%;
             }
 
             .profile-name {
@@ -983,6 +987,15 @@
 
             .section-title {
                 font-size: var(--font-size-md);
+            }
+
+            .main-grid{
+                display: block;
+                gap: 0;
+            }
+            .project-card{
+                width: 100%;
+                max-width: 90%;
             }
         }
     </style>
