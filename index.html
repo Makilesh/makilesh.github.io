@@ -109,16 +109,17 @@
            LAYOUT - Two column like Resumx
            ======================================== */
         .page-wrapper {
+            /* width: 100%; */
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .main-grid {
             display: grid;
-            grid-template-columns: 440px 1fr;
+            grid-template-columns: 400px minmax(0, 1fr);
             gap: 100px;
             align-items: start;
-            padding-right: var(--spacing-2xl);
+            padding-right: 0;
         }
 
         /* ========================================
@@ -373,6 +374,7 @@
             display: flex;
             flex-direction: column;
             gap: var(--spacing-4xl);
+            min-width: 0;
         }
 
         /* Section Header */
@@ -1191,7 +1193,7 @@
                                     <span class="project-category">Legal AI</span>
                                 </div>
                                 <h3 class="project-title">AI-Powered Legal Engine</h3>
-                                <p class="project-role">RAG architecture with ChromaDB and Gemini enabling semantic search across 673 legal documents</p>
+                                <p class="project-role">Built for Indian criminal law assistance, achieving Hybrid search across 673 IPC documents with sub-second retrieval/p>
                             </div>
                         </a>
 
@@ -1210,7 +1212,7 @@
                                     <span class="project-category">Voice AI</span>
                                 </div>
                                 <h3 class="project-title">AI-Powered Voice Agent</h3>
-                                <p class="project-role">Real-time bidirectional voice agent with &lt;200ms latency and sentiment-aware conversation</p>
+                                <p class="project-role">Real-time voice assistant with faster-whisper STT, Kokoro-82M TTS, and silero-VAD — achieving sub-200ms response latency with CUDA auto-detection and configurable voice personas</p>
                             </div>
                         </a>
 
@@ -1227,7 +1229,7 @@
                                     <span class="project-category">Multi-Agent AI</span>
                                 </div>
                                 <h3 class="project-title">AI CMO Multi-Agent System</h3>
-                                <p class="project-role">LangGraph + CrewAI orchestration with 4-agent architecture, self-corrective loops, and dynamic routing for marketing decisions</p>
+                                <p class="project-role">4-agent marketing system (Analyst → Strategy → Execution → Critic) built with LangGraph + CrewAI — autonomously pressure-tests decisions through a self-corrective critique loop, rejecting poor strategies and replanning up to 3 iterations</p>
                             </div>
                         </a>
 
@@ -1244,14 +1246,14 @@
                                     <span class="project-category">RAG System</span>
                                 </div>
                                 <h3 class="project-title">Production-Grade Agentic RAG</h3>
-                                <p class="project-role">7-agent RAG system with hybrid search (HNSW + BM25), semantic chunking, and self-corrective retrieval using Milvus</p>
+                                <p class="project-role">7-agent document Q&A system with true hybrid search — 384-dim dense embeddings + BM25 sparse vectors fused via Reciprocal Rank Fusion in Milvus — with semantic chunking, self-corrective query rewriting, and multi-format ingestion (PDF, DOCX, PPTX, Excel)</p>
                             </div>
                         </a>
 
                         <!-- Project 7 -->
                         <a href="https://github.com/Makilesh/Exit_Interview_Bot" target="_blank" class="project-card">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);"></div>
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
                                 <div class="project-thumbnail-icon">🤝</div>
                             </div>
                             <div class="project-content">
@@ -1261,14 +1263,14 @@
                                     <span class="project-category">Agentic AI</span>
                                 </div>
                                 <h3 class="project-title">Agentic AI Exit Interview System</h3>
-                                <p class="project-role">LLM-driven interview agent with state machine orchestration, concurrent sentiment &amp; HR-flag classification, voice modes (STT + TTS), and structured session reporting</p>
+                                <p class="project-role">"LLM-driven interview agent with a 7-state machine, 3 concurrent LangChain classifiers per turn (decision engine + sentiment tagger + HR-flag detector), 4 voice modes via WebSocket (STT + TTS), and per-session JSON records, plain-text transcripts, and Markdown HR summaries</p>
                             </div>
                         </a>
 
                         <!-- Project 8 -->
                         <a href="https://github.com/Makilesh/weighted_soft_voting_for_lung_disease_classification" target="_blank" class="project-card">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #e96c6c 0%, #6b48ff 100%);"></div>
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
                                 <div class="project-thumbnail-icon">🫁</div>
                             </div>
                             <div class="project-content">
@@ -1278,7 +1280,7 @@
                                     <span class="project-category">Medical AI</span>
                                 </div>
                                 <h3 class="project-title">CUA-DELC Lung Disease Classifier</h3>
-                                <p class="project-role">Confidence &amp; uncertainty-aware dynamic ensemble (InceptionV3 + MobileNetV2 + VGG19) for COVID-19 and lung disease classification from X-rays</p>
+                                <p class="project-role">Confidence & uncertainty-aware dynamic ensemble of InceptionV3, MobileNetV2, and VGG19 for 4-class lung disease classification (COVID-19, Opacity, Pneumonia, Normal) — with temperature-scaled calibration, entropy-based uncertainty estimation, and per-sample adaptive weighting (confidence^α / uncertainty)</p>
                             </div>
                         </a>
                         <!-- Project 3 -->
@@ -1296,7 +1298,7 @@
                                     <span class="project-category">Lead Generation</span>
                                 </div>
                                 <h3 class="project-title">Multi-Source Lead Scraping Engine</h3>
-                                <p class="project-role">AI-powered Lead Generation that scrapes lead across Reddit, Discord, Slack, and LinkedIn</p>
+                                <p class="project-role">AI-qualified lead pipeline scraping Reddit, Discord, Slack, and LinkedIn — with semantic filtering and automated outreach via Twilio, cutting lead generation costs by 94.6%</p>
                             </div>
                         </a>
 
@@ -1315,7 +1317,7 @@
                                     <span class="project-category">Web Scraping</span>
                                 </div>
                                 <h3 class="project-title">Business Contact Web Scraper</h3>
-                                <p class="project-role">Web scraper using Selenium and BeautifulSoup used for contact and details extraction </p>
+                                <p class="project-role">Data extraction backbone for the lead generation pipeline — scraping business contact details, emails, and company metadata at scale using Selenium + BeautifulSoup </p>
                             </div>
                         </a>
 
@@ -1439,7 +1441,7 @@
                                 Finalist 2025
                             </div>
                             <h3 class="hackathon-name">THIRAN</h3>
-                            <p class="hackathon-role">Team Lead • Data Scientist • Data Engineer</p>
+                            <p class="hackathon-role">Team Lead • Data Scientist • AI Engineer</p>
                             <p class="hackathon-description">Developed AI Legal Engine with RAG architecture achieving semantic search across 673+ legal documents for Indian criminal law assistance.</p>
                         </div>
                     </div>
