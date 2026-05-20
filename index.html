@@ -23,7 +23,8 @@
         :root {
             /* Background colors - Resumx uses very dark grays */
             --bg-page: #0c0c0c;
-            --bg-card: #141414;
+            --bg-card: #1a1a1a;
+            --bg-card-soft: #191919;
             --bg-card-hover: #1a1a1a;
             --bg-tag: #1f1f1f;
             --bg-tag-hover: #2a2a2a;
@@ -456,7 +457,7 @@
             max-width: calc(40% - var(--spacing-lg) * 0.8);
             scroll-snap-align: start;
             flex-shrink: 0;
-            height: 480px;
+            height: 480px; /* featured card height */
             display: flex;
             flex-direction: column;
             position: relative;
@@ -465,7 +466,7 @@
         .project-card:hover {
             border-color: var(--border-light);
             transform: translateY(-6px) scale(1.03);
-            height: 660px;
+            height: 720px; /* expanded featured size */
             z-index: 5;
             box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
         }
@@ -498,6 +499,43 @@
             .project-card::after { display: none; }
         }
 
+        /* Read-more button fallback for accessibility (visually hidden until JS mounts) */
+        .read-more-btn {
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            background: rgba(255,255,255,0.06);
+            color: var(--text-secondary);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            border: none;
+            cursor: pointer;
+            display: none;
+        }
+
+        .project-card:hover .read-more-btn { display: inline-flex; }
+
+        /* Details button to open richer modal */
+        .details-btn {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255,255,255,0.04);
+            color: var(--text-secondary);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .project-card:hover .details-btn { display: inline-flex; }
+
         .project-thumbnail {
             height: 160px;
             display: flex;
@@ -510,7 +548,7 @@
         .project-thumbnail-bg {
             position: absolute;
             inset: 0;
-            opacity: 0.9;
+            opacity: 1; /* remove darkening */
         }
 
         .project-thumbnail-icon {
@@ -528,7 +566,7 @@
         }
 
         .project-content {
-            padding: 14px 14px 16px;
+            padding: 12px 14px 16px;
             flex: 1;
             display: flex;
             flex-direction: column;
@@ -570,14 +608,33 @@
         .project-role {
             font-size: var(--font-size-sm);
             color: var(--text-secondary);
-            line-height: 1.42;
+            line-height: 1.45;
             margin: 0;
             display: -webkit-box;
-            -webkit-line-clamp: 6;
+            -webkit-line-clamp: 4; /* stable preview lines */
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
-            min-height: 8.52em;
+            min-height: 6.4em;
+            position: relative;
+        }
+
+        /* subtle gradient fade to indicate truncation (very light) */
+        .project-role::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 24px;
+            background: linear-gradient(180deg, rgba(20,20,20,0) 0%, rgba(20,20,20,0.10) 100%);
+            pointer-events: none;
+            transition: opacity 160ms ease;
+        }
+
+        /* hide fade when expanded (hover) */
+        .project-card:hover .project-role::after {
+            opacity: 0;
         }
 
         .project-card:hover .project-role {
@@ -1587,5 +1644,149 @@
             </main>
         </div>
     </div>
+    <!-- Project modal (injected content) -->
+    <div id="project-modal" class="modal" aria-hidden="true" style="display:none;">
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-panel">
+            <button class="modal-close" aria-label="Close">×</button>
+            <div class="modal-hero"></div>
+            <h3 class="modal-title"></h3>
+            <div class="modal-meta"></div>
+            <div class="modal-body"></div>
+            <ul class="modal-tech" aria-hidden="true"></ul>
+            <div class="modal-actions">
+                <a class="modal-link" target="_blank" rel="noopener">Open Project</a>
+                <button class="modal-copy">Copy link</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Modal styles */
+        .modal { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; z-index: 9999; }
+        .modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.6); }
+        .modal-panel { position: relative; width: min(880px, 92%); max-height: 86vh; overflow: auto; background: var(--bg-card); border: 1px solid var(--border-light); border-radius: 12px; padding: 20px; color: var(--text-primary); box-shadow: 0 30px 60px rgba(0,0,0,0.6); }
+        .modal-close { position: absolute; right: 12px; top: 10px; background: transparent; border: none; color: var(--text-secondary); font-size: 20px; cursor: pointer; }
+        .modal-title { margin: 8px 0 12px 0; font-size: 1.1rem; }
+        .modal-hero { height: 160px; border-radius: 8px; background-size: cover; background-position: center; margin-bottom: 12px; }
+        .modal-meta { font-size: 13px; color: var(--text-muted); margin-bottom: 8px; }
+        .modal-title { margin: 8px 0 6px 0; font-size: 1.15rem; }
+        .modal-body { color: var(--text-secondary); line-height: 1.6; max-height: 40vh; overflow: auto; }
+        .modal-tech { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; list-style:none; padding:0; }
+        .modal-tech li { background: var(--bg-tag); color: var(--text-secondary); padding:6px 8px; border-radius:8px; font-size:12px; }
+        .modal-actions { margin-top: 18px; display:flex; gap:12px; align-items:center; }
+        .modal-link { background: var(--bg-tag); color: var(--text-primary); padding: 8px 12px; border-radius: 8px; text-decoration:none; }
+        .modal-copy { background: transparent; color: var(--text-secondary); border: 1px solid var(--border-light); padding: 8px 10px; border-radius: 8px; cursor: pointer; }
+    </style>
+
+    <script>
+        // Add Read more buttons and modal behavior
+        (function(){
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                // avoid adding if already present
+                if (card.querySelector('.read-more-btn')) return;
+
+                // Details button (opens rich modal)
+                const details = document.createElement('button');
+                details.className = 'details-btn';
+                details.setAttribute('aria-label','Details');
+                details.innerText = 'ℹ️';
+                card.appendChild(details);
+                details.addEventListener('click', (e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const title = card.querySelector('.project-title')?.innerText || '';
+                    const desc = card.querySelector('.project-role')?.innerText || '';
+                    const link = card.getAttribute('href') || card.querySelector('a')?.href || '#';
+                    // try to use thumbnail background for hero
+                    const thumbBg = card.querySelector('.project-thumbnail-bg');
+                    const thumbInline = thumbBg ? thumbBg.getAttribute('style') || '' : '';
+                    const icon = card.querySelector('.project-thumbnail-icon')?.innerText || '';
+                    openModal({title, desc, link, thumbInline, icon});
+                });
+
+                // Read more button (opens project page)
+                const btn = document.createElement('button');
+                btn.className = 'read-more-btn';
+                btn.textContent = 'Read more';
+                card.appendChild(btn);
+                btn.addEventListener('click', (e)=>{
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const link = card.getAttribute('href') || card.querySelector('a')?.href;
+                    if(link){ window.open(link, '_blank'); }
+                });
+            });
+
+            const modal = document.getElementById('project-modal');
+            const modalTitle = modal.querySelector('.modal-title');
+            const modalBody = modal.querySelector('.modal-body');
+            const modalLink = modal.querySelector('.modal-link');
+            const closeBtn = modal.querySelector('.modal-close');
+
+                        function openModal({title, desc, link, thumbInline, icon}){
+                                modalTitle.textContent = title;
+                                // hero: auto-generate a screenshot-like SVG using thumbnail colors + icon
+                                const hero = modal.querySelector('.modal-hero');
+                                try{
+                                        const colors = (thumbInline.match(/#(?:[0-9a-fA-F]{3,6})/g) || []);
+                                        const c1 = colors[0] || '#667eea';
+                                        const c2 = colors[1] || colors[0] || '#764ba2';
+                                        const iconEsc = icon ? icon.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : '';
+                                        const svg = `
+                                                <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'>
+                                                    <defs>
+                                                        <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+                                                            <stop offset='0%' stop-color='${c1}'/>
+                                                            <stop offset='100%' stop-color='${c2}'/>
+                                                        </linearGradient>
+                                                    </defs>
+                                                    <rect width='100%' height='100%' fill='url(#g)' />
+                                                    <g transform='translate(50,50)'>
+                                                        <rect x='0' y='0' width='1100' height='500' rx='20' fill='rgba(0,0,0,0.06)' />
+                                                    </g>
+                                                    <text x='50%' y='45%' font-family='Inter, system-ui, sans-serif' font-size='160' text-anchor='middle' fill='rgba(255,255,255,0.9)'>${iconEsc}</text>
+                                                    <text x='50%' y='90%' font-family='Inter, system-ui, sans-serif' font-size='36' text-anchor='middle' fill='rgba(255,255,255,0.92)'>${title.replace(/&/g,'&amp;')}</text>
+                                                </svg>`;
+                                        hero.style.backgroundImage = `url('data:image/svg+xml;utf8,${encodeURIComponent(svg)}')`;
+                                        hero.style.backgroundSize = 'cover';
+                                }catch(e){ hero.style.backgroundImage = ''; }
+                                // meta (date/category)
+                                modal.querySelector('.modal-meta').textContent = '';
+                                // body
+                                modalBody.textContent = desc;
+                // tech list - derive from project-category tags inside card
+                const techList = modal.querySelector('.modal-tech');
+                techList.innerHTML = '';
+                try{
+                    const categories = Array.from(document.querySelectorAll('.project-card')).find(c=> (c.querySelector('.project-title')?.innerText||'')===title)?.querySelectorAll('.project-category');
+                    if(categories){
+                        categories.forEach(cat=>{ const li=document.createElement('li'); li.textContent = cat.innerText.replace('•','').trim(); techList.appendChild(li); });
+                    }
+                }catch(e){}
+
+                modalLink.href = link;
+                modalLink.textContent = 'Open Project';
+                modal.style.display = 'flex';
+                modal.setAttribute('aria-hidden','false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal(){
+                modal.style.display = 'none';
+                modal.setAttribute('aria-hidden','true');
+                document.body.style.overflow = '';
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            modal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+            document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+
+            // copy link action
+            const copyBtn = modal.querySelector('.modal-copy');
+            copyBtn.addEventListener('click', ()=>{ navigator.clipboard.writeText(modalLink.href); copyBtn.textContent = 'Copied'; setTimeout(()=>copyBtn.textContent='Copy link',1500); });
+        })();
+    </script>
 </body>
 </html>
