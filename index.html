@@ -456,7 +456,7 @@
             max-width: calc(40% - var(--spacing-lg) * 0.8);
             scroll-snap-align: start;
             flex-shrink: 0;
-            height: 430px;
+            height: 480px;
             display: flex;
             flex-direction: column;
             position: relative;
@@ -465,9 +465,37 @@
         .project-card:hover {
             border-color: var(--border-light);
             transform: translateY(-6px) scale(1.03);
-            height: 590px;
+            height: 660px;
             z-index: 5;
             box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+        }
+
+        /* Subtle Read more affordance (appears on hover) */
+        .project-card::after {
+            content: 'Read more';
+            position: absolute;
+            right: 14px;
+            bottom: 14px;
+            background: rgba(255,255,255,0.06);
+            color: var(--text-secondary);
+            padding: 6px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            letter-spacing: 0.2px;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: opacity 180ms ease, transform 180ms ease;
+            pointer-events: none;
+        }
+
+        .project-card:hover::after {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* hide affordance on small screens */
+        @media (max-width: 480px) {
+            .project-card::after { display: none; }
         }
 
         .project-thumbnail {
