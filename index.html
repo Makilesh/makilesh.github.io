@@ -496,6 +496,20 @@
             color: var(--text-primary);
         }
 
+        .projects-more {
+            margin-top: var(--spacing-md);
+            font-size: var(--font-size-sm);
+        }
+
+        .projects-more a {
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        .projects-more a:hover {
+            color: var(--text-primary);
+        }
+
         .project-thumbnail {
             height: 160px;
             display: flex;
@@ -1133,8 +1147,9 @@
                             <span class="skill-tag">Multi-Agent</span>
                             <span class="skill-tag">Voice AI</span>
                             <span class="skill-tag">FastAPI</span>
-                            <!-- <span class="skill-tag">AWS</span>
-                            <span class="skill-tag">Docker</span> -->
+                            <span class="skill-tag">LangGraph</span>
+                            <span class="skill-tag">Vector Databases</span>
+                            <span class="skill-tag">Docker</span>
                         </div>
                     </div>
 
@@ -1212,80 +1227,80 @@
                         <h2 class="section-title">Projects</h2>
                     </div>
                     <div class="projects-grid">
-                        <!-- Project 1 -->
-                        <a href="https://github.com/Makilesh/AI_Legal_Engine" target="_blank" class="project-card">
+                        <!-- SME Voice Agent -->
+                        <article class="project-card">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
-                                <div class="project-thumbnail-icon">⚖️</div>
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);"></div>
+                                <div class="project-thumbnail-icon">🎧</div>
                             </div>
                             <div class="project-content">
                                 <div class="project-meta">
-                                    <span class="project-date">Jun 2025</span>
-                                    <!-- <span class="project-category">•</span> -->
-                                    <!-- <span class="project-category">AI Developer</span> -->
-                                    <span class="project-category">•</span>
-                                    <span class="project-category">Legal AI</span>
-                                </div>
-                                <h3 class="project-title">AI-Powered Legal Engine</h3>
-                                <p class="project-role">Built for Indian criminal law assistance, achieving hybrid search across 673 IPC documents with sub-second retrieval.</p>
-                            </div>
-                        </a>
-
-                        <!-- Project 2 -->
-                        <a href="https://github.com/Makilesh/voice_engine_MVP" target="_blank" class="project-card">
-                            <div class="project-thumbnail">
-                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);"></div>
-                                <div class="project-thumbnail-icon">🎙️</div>
-                            </div>
-                            <div class="project-content">
-                                <div class="project-meta">
-                                    <span class="project-date">Sep - Oct 2025</span>
-                                    <!-- <span class="project-category">•</span>
-                                    <span class="project-category">AI Developer</span> -->
+                                    <span class="project-date">Jul 2026</span>
                                     <span class="project-category">•</span>
                                     <span class="project-category">Voice AI</span>
                                 </div>
-                                <h3 class="project-title">AI-Powered Voice Agent</h3>
-                                <p class="project-role">Real-time voice assistant with faster-whisper STT, Kokoro-82M TTS, and silero-VAD — achieving sub-200ms response latency with CUDA auto-detection and configurable voice personas</p>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/SME_voice_agent" target="_blank" rel="noopener" class="card-link">Real-Time Meeting Copilot</a></h3>
+                                <p class="project-role">Invisible desktop overlay for Teams/Meet/Zoom that captures system audio, live-transcribes with speaker separation (faster-whisper), detects questions, and drafts grounded answers in 1–2s via a dual-model draft + refine pipeline with Chroma-based RAG over uploaded documents</p>
+                                <button class="read-more-btn" type="button">Read more</button>
                             </div>
-                        </a>
+                        </article>
 
-                        <!-- Project 5 -->
-                        <a href="https://github.com/Makilesh/Chief_Marketing_Officer_Agent" target="_blank" class="project-card">
+                        <!-- Sensitive Data Detection -->
+                        <article class="project-card">
+                            <div class="project-thumbnail">
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);"></div>
+                                <div class="project-thumbnail-icon">🛡️</div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-date">Jul 2026</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">Compliance AI</span>
+                                </div>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/Sensitive_Data_Detection-Compliance_Assistant" target="_blank" rel="noopener" class="card-link">Sensitive Data Detection & Compliance Assistant</a></h3>
+                                <p class="project-role">Multilingual PII detection and redaction across PDF, TXT, and CSV — layered regex + checksum + spaCy NER + LLM verification, FAISS hybrid-search RAG for document Q&A, a rate-limit-aware model rotation engine, and 120+ unit tests</p>
+                                <button class="read-more-btn" type="button">Read more</button>
+                            </div>
+                        </article>
+
+                        <!-- M&A Diligence RAG -->
+                        <article class="project-card">
                             <div class="project-thumbnail">
                                 <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
-                                <div class="project-thumbnail-icon">🧠</div>
+                                <div class="project-thumbnail-icon">📊</div>
                             </div>
                             <div class="project-content">
                                 <div class="project-meta">
-                                    <span class="project-date">Jan 2026</span>
+                                    <span class="project-date">Jun 2026</span>
                                     <span class="project-category">•</span>
-                                    <span class="project-category">Multi-Agent AI</span>
+                                    <span class="project-category">Financial AI</span>
                                 </div>
-                                <h3 class="project-title">AI CMO Multi-Agent System</h3>
-                                <p class="project-role">4-agent marketing system (Analyst → Strategy → Execution → Critic) built with LangGraph + CrewAI — autonomously pressure-tests decisions through a self-corrective critique loop, rejecting poor strategies and replanning up to 3 iterations</p>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/ma-diligence-rag-engine" target="_blank" rel="noopener" class="card-link">M&A Due Diligence RAG Engine</a></h3>
+                                <p class="project-role">Hardware-aware hybrid agentic RAG for M&A data rooms — LangGraph orchestration, Qdrant dense + sparse retrieval with cross-encoder reranking, multi-page table stitching with cell-level numeric fidelity, and deterministic hallucination guards; 100% pipeline reliability across validation queries</p>
+                                <button class="read-more-btn" type="button">Read more</button>
                             </div>
-                        </a>
+                        </article>
 
-                        <!-- Project 6 -->
-                        <a href="https://github.com/Makilesh/AGENTIC_RAG" target="_blank" class="project-card">
+                        <!-- Discharge Summary Agent -->
+                        <article class="project-card">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
-                                <div class="project-thumbnail-icon">📚</div>
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);"></div>
+                                <div class="project-thumbnail-icon">🏥</div>
                             </div>
                             <div class="project-content">
                                 <div class="project-meta">
-                                    <span class="project-date">Feb 2026</span>
+                                    <span class="project-date">Jun 2026</span>
                                     <span class="project-category">•</span>
-                                    <span class="project-category">RAG System</span>
+                                    <span class="project-category">Medical AI</span>
                                 </div>
-                                <h3 class="project-title">Production-Grade Agentic RAG</h3>
-                                <p class="project-role">7-agent document Q&A system with true hybrid search — 384-dim dense embeddings + BM25 sparse vectors fused via Reciprocal Rank Fusion in Milvus — with semantic chunking, self-corrective query rewriting, and multi-format ingestion (PDF, DOCX, PPTX, Excel)</p>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/discharge_summary_agent" target="_blank" rel="noopener" class="card-link">Clinical Discharge Summary Agent</a></h3>
+                                <p class="project-role">Safety-first agentic system that extracts and reconciles multi-page hospital PDFs into structured discharge summaries — LangGraph state machine with clinical validation rules; processed a 71-page, 15-document-type record in 208s, flagging 3 genuine conflicts with zero false positives</p>
+                                <button class="read-more-btn" type="button">Read more</button>
                             </div>
-                        </a>
+                        </article>
 
-                        <!-- Project 7 -->
-                        <a href="https://github.com/Makilesh/Exit_Interview_Bot" target="_blank" class="project-card">
+                        <!-- Exit Interview Bot -->
+                        <article class="project-card">
                             <div class="project-thumbnail">
                                 <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
                                 <div class="project-thumbnail-icon">🤝</div>
@@ -1296,15 +1311,88 @@
                                     <span class="project-category">•</span>
                                     <span class="project-category">Agentic AI</span>
                                 </div>
-                                <h3 class="project-title">Agentic AI Exit Interview System</h3>
-                                <p class="project-role">LLM-driven interview agent with a 7-state machine, 3 concurrent LangChain classifiers per turn (decision engine + sentiment tagger + HR-flag detector), 4 voice modes via WebSocket (STT + TTS), and per-session JSON records, plain-text transcripts, and Markdown HR summaries.</p>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/Exit_Interview_Bot" target="_blank" rel="noopener" class="card-link">Agentic AI Exit Interview System</a></h3>
+                                <p class="project-role">LLM-driven interview agent with a 7-state machine, 3 concurrent LangChain classifiers per turn (decision engine + sentiment tagger + HR-flag detector), 4 voice modes via WebSocket (STT + TTS), and per-session JSON records, plain-text transcripts, and Markdown HR summaries</p>
+                                <button class="read-more-btn" type="button">Read more</button>
                             </div>
-                        </a>
+                        </article>
 
-                        <!-- Project 8 -->
-                        <a href="https://github.com/Makilesh/weighted_soft_voting_for_lung_disease_classification" target="_blank" class="project-card">
+                        <!-- Agentic RAG -->
+                        <article class="project-card">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                                <div class="project-thumbnail-icon">📚</div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-date">Feb 2026</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">RAG System</span>
+                                </div>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/AGENTIC_RAG" target="_blank" rel="noopener" class="card-link">Production-Grade Agentic RAG</a></h3>
+                                <p class="project-role">7-agent document Q&A system with true hybrid search — 384-dim dense embeddings + BM25 sparse vectors fused via Reciprocal Rank Fusion in Milvus — with semantic chunking, self-corrective query rewriting, and multi-format ingestion (PDF, DOCX, PPTX, Excel)</p>
+                                <button class="read-more-btn" type="button">Read more</button>
+                            </div>
+                        </article>
+
+                        <!-- AI CMO -->
+                        <article class="project-card">
+                            <div class="project-thumbnail">
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);"></div>
+                                <div class="project-thumbnail-icon">🧠</div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-date">Jan 2026</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">Multi-Agent AI</span>
+                                </div>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/Chief_Marketing_Officer_Agent" target="_blank" rel="noopener" class="card-link">AI CMO Multi-Agent System</a></h3>
+                                <p class="project-role">4-agent marketing system (Analyst → Strategy → Execution → Critic) built with LangGraph + CrewAI — autonomously pressure-tests decisions through a self-corrective critique loop, rejecting poor strategies and replanning up to 3 iterations</p>
+                                <button class="read-more-btn" type="button">Read more</button>
+                            </div>
+                        </article>
+
+                        <!-- Web Scraper -->
+                        <article class="project-card">
+                            <div class="project-thumbnail">
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                                <div class="project-thumbnail-icon">🔍</div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-date">Dec 2025</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">Web Scraping</span>
+                                </div>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/general_scraper" target="_blank" rel="noopener" class="card-link">Business Contact Web Scraper</a></h3>
+                                <p class="project-role">Data extraction backbone for the lead generation pipeline — scraping business contact details, emails, and company metadata at scale using Selenium + BeautifulSoup</p>
+                                <button class="read-more-btn" type="button">Read more</button>
+                            </div>
+                        </article>
+
+                        <!-- Lead Scraping Engine -->
+                        <article class="project-card">
+                            <div class="project-thumbnail">
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);"></div>
+                                <div class="project-thumbnail-icon">🎯</div>
+                            </div>
+                            <div class="project-content">
+                                <div class="project-meta">
+                                    <span class="project-date">Nov - Dec 2025</span>
+                                    <span class="project-category">•</span>
+                                    <span class="project-category">Lead Generation</span>
+                                </div>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/AI_Sales_Agent" target="_blank" rel="noopener" class="card-link">Multi-Source Lead Scraping Engine</a></h3>
+                                <p class="project-role">AI-qualified lead pipeline scraping Reddit, Discord, Slack, and LinkedIn — with semantic filtering and automated outreach via Twilio, cutting lead generation costs by 94.6%</p>
+                                <button class="read-more-btn" type="button">Read more</button>
+                            </div>
+                        </article>
+
+                        <!-- Lung Disease Classifier -->
+                        <article class="project-card">
+                            <div class="project-thumbnail">
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #5ee7df 0%, #b490ca 100%);"></div>
                                 <div class="project-thumbnail-icon">🫁</div>
                             </div>
                             <div class="project-content">
@@ -1313,49 +1401,51 @@
                                     <span class="project-category">•</span>
                                     <span class="project-category">Medical AI</span>
                                 </div>
-                                <h3 class="project-title">CUA-DELC Lung Disease Classifier</h3>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/weighted_soft_voting_for_lung_disease_classification" target="_blank" rel="noopener" class="card-link">CUA-DELC Lung Disease Classifier</a></h3>
                                 <p class="project-role">Confidence & uncertainty-aware dynamic ensemble of InceptionV3, MobileNetV2, and VGG19 for 4-class lung disease classification (COVID-19, Opacity, Pneumonia, Normal) — with temperature-scaled calibration, entropy-based uncertainty estimation, and per-sample adaptive weighting (confidence^α / uncertainty)</p>
+                                <button class="read-more-btn" type="button">Read more</button>
                             </div>
-                        </a>
-                        <!-- Project 3 -->
-                        <a href="https://github.com/Makilesh/AI_Sales_Agent" target="_blank" class="project-card">
+                        </article>
+
+                        <!-- Voice Engine MVP -->
+                        <article class="project-card">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
-                                <div class="project-thumbnail-icon">🎯</div>
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #2af598 0%, #009efd 100%);"></div>
+                                <div class="project-thumbnail-icon">🎙️</div>
                             </div>
                             <div class="project-content">
                                 <div class="project-meta">
-                                    <span class="project-date">Nov - Dec 2025</span>
-                                    <!-- <span class="project-category">•</span>
-                                    <span class="project-category">AI Developer</span> -->
+                                    <span class="project-date">Sep - Oct 2025</span>
                                     <span class="project-category">•</span>
-                                    <span class="project-category">Lead Generation</span>
+                                    <span class="project-category">Voice AI</span>
                                 </div>
-                                <h3 class="project-title">Multi-Source Lead Scraping Engine</h3>
-                                <p class="project-role">AI-qualified lead pipeline scraping Reddit, Discord, Slack, and LinkedIn — with semantic filtering and automated outreach via Twilio, cutting lead generation costs by 94.6%</p>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/voice_engine_MVP" target="_blank" rel="noopener" class="card-link">AI-Powered Voice Agent</a></h3>
+                                <p class="project-role">Full-duplex real-time voice assistant with barge-in interruption handling — faster-whisper STT, Kokoro TTS, silero-VAD, and multi-provider LLM fallback (Groq, Ollama, Gemini, OpenAI) with exponential backoff, achieving 200–500ms response latency</p>
+                                <button class="read-more-btn" type="button">Read more</button>
                             </div>
-                        </a>
+                        </article>
 
-                        <!-- Project 4 -->
-                        <a href="https://github.com/Makilesh/general_scraper" target="_blank" class="project-card">
+                        <!-- Legal Engine -->
+                        <article class="project-card">
                             <div class="project-thumbnail">
-                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
-                                <div class="project-thumbnail-icon">🔍</div>
+                                <div class="project-thumbnail-bg" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                                <div class="project-thumbnail-icon">⚖️</div>
                             </div>
                             <div class="project-content">
                                 <div class="project-meta">
-                                    <span class="project-date">Dec 2025</span>
-                                    <!-- <span class="project-category">•</span>
-                                    <span class="project-category">AI Developer</span> -->
+                                    <span class="project-date">Jun 2025</span>
                                     <span class="project-category">•</span>
-                                    <span class="project-category">Web Scraping</span>
+                                    <span class="project-category">Legal AI</span>
                                 </div>
-                                <h3 class="project-title">Business Contact Web Scraper</h3>
-                                <p class="project-role">Data extraction backbone for the lead generation pipeline — scraping business contact details, emails, and company metadata at scale using Selenium + BeautifulSoup </p>
+                                <h3 class="project-title"><a href="https://github.com/Makilesh/AI_Legal_Engine" target="_blank" rel="noopener" class="card-link">AI-Powered Legal Engine</a></h3>
+                                <p class="project-role">Built for Indian criminal law assistance, achieving hybrid search across 673 IPC documents with sub-second retrieval</p>
+                                <button class="read-more-btn" type="button">Read more</button>
                             </div>
-                        </a>
-
+                        </article>
                     </div>
+                    <p class="projects-more">
+                        <a href="https://github.com/Makilesh?tab=repositories" target="_blank" rel="noopener">View all 40+ projects on GitHub →</a>
+                    </p>
                 </section>
 
                 <!-- Experience Section -->
@@ -1370,7 +1460,7 @@
                             <div class="experience-content">
                                 <div class="experience-header">
                                     <h3 class="experience-title">AI Developer Intern</h3>
-                                    <span class="experience-period">Sep 2025 - Mar 2025</span>
+                                    <span class="experience-period">Sep 2025 - Mar 2026</span>
                                 </div>
                                 <p class="experience-company">Shamla Tech Solutions</p>
                                 <p class="experience-location">Coimbatore, India</p>
@@ -1381,7 +1471,7 @@
                                     <li style="margin-bottom: 8px;">Engineered an end-to-end multi-source lead generation pipeline using AI-based qualification and semantic filtering, achieving 94.6% operational cost savings.</li>
                                     <li style="margin-bottom: 8px;">Worked extensively with LLMs, RAG architectures, vector databases, and semantic search to enable accurate, context-aware information retrieval.</li>
                                     <li style="margin-bottom: 8px;">Built a general-purpose web scraping and data processing system to support lead enrichment, analytics, and downstream AI workflows.</li>
-                                    <li style="margin-bottom: 8px;">Currently developing an AI-powered e-commerce chatbot and agent for Shopify, enabling intelligent product discovery, customer support, and personalized shopping experiences.</li>
+                                    <li style="margin-bottom: 8px;">Developed an AI-powered e-commerce chatbot and agent for Shopify, enabling intelligent product discovery, customer support, and personalized shopping experiences.</li>
                                     <li style="margin-bottom: 8px;">Collaborated on backend development using Python-based APIs, containerized applications with Docker, and supported scalable deployment and optimization workflows.</li>
                                     <li style="margin-bottom: 8px;"><strong>Tech Stack:</strong> Python, LLMs, RAG, Vector Databases, Twilio APIs, FastAPI, Docker, NLP, Web Scraping, Backend APIs</li>
                                 </ul>
@@ -1604,94 +1694,50 @@
     </style>
 
     <script>
-        // Add Read more buttons and modal behavior
+        // Project "Read more" modal
         (function(){
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                // avoid adding if already present
-                if (card.querySelector('.read-more-btn')) return;
-
-                // Details button (opens rich modal)
-                const details = document.createElement('button');
-                details.className = 'details-btn';
-                details.setAttribute('aria-label','Details');
-                details.innerText = 'ℹ️';
-                card.appendChild(details);
-                details.addEventListener('click', (e)=>{
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const title = card.querySelector('.project-title')?.innerText || '';
-                    const desc = card.querySelector('.project-role')?.innerText || '';
-                    const link = card.getAttribute('href') || card.querySelector('a')?.href || '#';
-                    // try to use thumbnail background for hero
-                    const thumbBg = card.querySelector('.project-thumbnail-bg');
-                    const thumbInline = thumbBg ? thumbBg.getAttribute('style') || '' : '';
-                    const icon = card.querySelector('.project-thumbnail-icon')?.innerText || '';
-                    openModal({title, desc, link, thumbInline, icon});
-                });
-
-                // Read more button (opens project page)
-                const btn = document.createElement('button');
-                btn.className = 'read-more-btn';
-                btn.textContent = 'Read more';
-                card.appendChild(btn);
-                btn.addEventListener('click', (e)=>{
-                    e.preventDefault();
-                    e.stopPropagation();
-                    const link = card.getAttribute('href') || card.querySelector('a')?.href;
-                    if(link){ window.open(link, '_blank'); }
-                });
-            });
-
             const modal = document.getElementById('project-modal');
             const modalTitle = modal.querySelector('.modal-title');
             const modalBody = modal.querySelector('.modal-body');
+            const modalMeta = modal.querySelector('.modal-meta');
             const modalLink = modal.querySelector('.modal-link');
+            const techList = modal.querySelector('.modal-tech');
             const closeBtn = modal.querySelector('.modal-close');
+            const copyBtn = modal.querySelector('.modal-copy');
 
-                        function openModal({title, desc, link, thumbInline, icon}){
-                                modalTitle.textContent = title;
-                                // hero: auto-generate a screenshot-like SVG using thumbnail colors + icon
-                                const hero = modal.querySelector('.modal-hero');
-                                try{
-                                        const colors = (thumbInline.match(/#(?:[0-9a-fA-F]{3,6})/g) || []);
-                                        const c1 = colors[0] || '#667eea';
-                                        const c2 = colors[1] || colors[0] || '#764ba2';
-                                        const iconEsc = icon ? icon.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : '';
-                                        const svg = `
-                                                <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'>
-                                                    <defs>
-                                                        <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
-                                                            <stop offset='0%' stop-color='${c1}'/>
-                                                            <stop offset='100%' stop-color='${c2}'/>
-                                                        </linearGradient>
-                                                    </defs>
-                                                    <rect width='100%' height='100%' fill='url(#g)' />
-                                                    <g transform='translate(50,50)'>
-                                                        <rect x='0' y='0' width='1100' height='500' rx='20' fill='rgba(0,0,0,0.06)' />
-                                                    </g>
-                                                    <text x='50%' y='45%' font-family='Inter, system-ui, sans-serif' font-size='160' text-anchor='middle' fill='rgba(255,255,255,0.9)'>${iconEsc}</text>
-                                                    <text x='50%' y='90%' font-family='Inter, system-ui, sans-serif' font-size='36' text-anchor='middle' fill='rgba(255,255,255,0.92)'>${title.replace(/&/g,'&amp;')}</text>
-                                                </svg>`;
-                                        hero.style.backgroundImage = `url('data:image/svg+xml;utf8,${encodeURIComponent(svg)}')`;
-                                        hero.style.backgroundSize = 'cover';
-                                }catch(e){ hero.style.backgroundImage = ''; }
-                                // meta (date/category)
-                                modal.querySelector('.modal-meta').textContent = '';
-                                // body
-                                modalBody.textContent = desc;
-                // tech list - derive from project-category tags inside card
-                const techList = modal.querySelector('.modal-tech');
+            function openModal(card){
+                const title = card.querySelector('.project-title')?.innerText || '';
+                const desc = card.querySelector('.project-role')?.innerText || '';
+                const link = card.querySelector('.card-link')?.href || '#';
+                const icon = card.querySelector('.project-thumbnail-icon')?.innerText || '';
+                const thumbInline = card.querySelector('.project-thumbnail-bg')?.getAttribute('style') || '';
+                const date = card.querySelector('.project-date')?.innerText || '';
+                const categories = Array.from(card.querySelectorAll('.project-category'))
+                    .map(el => el.innerText.replace('•','').trim()).filter(Boolean);
+
+                modalTitle.textContent = title;
+                modalBody.textContent = desc;
+                modalMeta.textContent = [date, ...categories].filter(Boolean).join(' • ');
+
+                const hero = modal.querySelector('.modal-hero');
+                const colors = (thumbInline.match(/#(?:[0-9a-fA-F]{3,6})/g) || []);
+                const c1 = colors[0] || '#667eea';
+                const c2 = colors[1] || colors[0] || '#764ba2';
+                hero.style.background = `linear-gradient(135deg, ${c1} 0%, ${c2} 100%)`;
+                hero.style.display = 'flex';
+                hero.style.alignItems = 'center';
+                hero.style.justifyContent = 'center';
+                hero.style.fontSize = '56px';
+                hero.textContent = icon;
+
                 techList.innerHTML = '';
-                try{
-                    const categories = Array.from(document.querySelectorAll('.project-card')).find(c=> (c.querySelector('.project-title')?.innerText||'')===title)?.querySelectorAll('.project-category');
-                    if(categories){
-                        categories.forEach(cat=>{ const li=document.createElement('li'); li.textContent = cat.innerText.replace('•','').trim(); techList.appendChild(li); });
-                    }
-                }catch(e){}
+                categories.forEach(cat => {
+                    const li = document.createElement('li');
+                    li.textContent = cat;
+                    techList.appendChild(li);
+                });
 
                 modalLink.href = link;
-                modalLink.textContent = 'Open Project';
                 modal.style.display = 'flex';
                 modal.setAttribute('aria-hidden','false');
                 document.body.style.overflow = 'hidden';
@@ -1703,13 +1749,22 @@
                 document.body.style.overflow = '';
             }
 
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.querySelector('.read-more-btn')?.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(card);
+                });
+            });
+
             closeBtn.addEventListener('click', closeModal);
             modal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
             document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
 
-            // copy link action
-            const copyBtn = modal.querySelector('.modal-copy');
-            copyBtn.addEventListener('click', ()=>{ navigator.clipboard.writeText(modalLink.href); copyBtn.textContent = 'Copied'; setTimeout(()=>copyBtn.textContent='Copy link',1500); });
+            copyBtn.addEventListener('click', ()=>{
+                navigator.clipboard.writeText(modalLink.href);
+                copyBtn.textContent = 'Copied';
+                setTimeout(()=>copyBtn.textContent='Copy link',1500);
+            });
         })();
     </script>
 </body>
