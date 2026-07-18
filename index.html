@@ -9,7 +9,10 @@
     <meta property="og:description" content="Oracle-certified AI professional with production expertise in building and deploying LLM, RAG, multi-agent frameworks and real-time voice AI.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://makilesh.github.io">
+    <meta property="og:image" content="https://makilesh.github.io/profile.jpg">
+    <meta name="theme-color" content="#0c0c0c">
     <link rel="canonical" href="https://makilesh.github.io">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230c0c0c'/%3E%3Ctext x='50' y='72' font-size='60' font-family='Inter,sans-serif' font-weight='700' fill='%23fff' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
     
     <!-- Inter Font - matches Resumx exactly -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,9 +113,9 @@
            LAYOUT - Two column like Resumx
            ======================================== */
         .page-wrapper {
-            /* width: 100%; */
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 var(--spacing-2xl);
         }
 
         .main-grid {
@@ -130,9 +133,7 @@
             position: sticky;
             padding: 40px 0;
             top: 0;
-            padding-left: var(--spacing-2xl);
-            padding-right: var(--spacing-2xl);
-            /* height: 100vh; */
+            max-height: 100vh;
             overflow-y: auto;
             overflow-x: hidden;
             scrollbar-width: none; /* Firefox */
@@ -450,14 +451,11 @@
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
             overflow: hidden;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, height 0.25s ease;
-            cursor: pointer;
-            width: calc(40% - var(--spacing-lg) * 0.8);
-            min-width: calc(40% - var(--spacing-lg) * 0.8);
-            max-width: calc(40% - var(--spacing-lg) * 0.8);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+            width: calc(50% - var(--spacing-lg) / 2);
+            min-width: calc(50% - var(--spacing-lg) / 2);
             scroll-snap-align: start;
             flex-shrink: 0;
-            height: 480px; /* featured card height */
             display: flex;
             flex-direction: column;
             position: relative;
@@ -465,76 +463,38 @@
 
         .project-card:hover {
             border-color: var(--border-light);
-            transform: translateY(-6px) scale(1.03);
-            height: 720px; /* expanded featured size */
-            z-index: 5;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
         }
 
-        /* Subtle Read more affordance (appears on hover) */
-        .project-card::after {
-            content: 'Read more';
+        /* Title link stretches over the whole card (native link semantics) */
+        .card-link::after {
+            content: '';
             position: absolute;
-            right: 14px;
-            bottom: 14px;
-            background: rgba(255,255,255,0.06);
-            color: var(--text-secondary);
-            padding: 6px 10px;
-            border-radius: 999px;
-            font-size: 12px;
-            letter-spacing: 0.2px;
-            opacity: 0;
-            transform: translateY(6px);
-            transition: opacity 180ms ease, transform 180ms ease;
-            pointer-events: none;
+            inset: 0;
+            z-index: 1;
         }
 
-        .project-card:hover::after {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* hide affordance on small screens */
-        @media (max-width: 480px) {
-            .project-card::after { display: none; }
-        }
-
-        /* Read-more button fallback for accessibility (visually hidden until JS mounts) */
         .read-more-btn {
-            position: absolute;
-            right: 14px;
-            bottom: 14px;
-            background: rgba(255,255,255,0.06);
+            position: relative;
+            z-index: 2;
+            align-self: flex-start;
+            margin-top: auto;
+            background: var(--bg-tag);
             color: var(--text-secondary);
-            padding: 6px 10px;
-            border-radius: 999px;
+            padding: 6px 12px;
+            border-radius: var(--radius-full);
             font-size: 12px;
             border: none;
             cursor: pointer;
-            display: none;
+            font-family: inherit;
+            transition: var(--transition);
         }
 
-        .project-card:hover .read-more-btn { display: inline-flex; }
-
-        /* Details button to open richer modal */
-        .details-btn {
-            position: absolute;
-            left: 12px;
-            top: 12px;
-            width: 34px;
-            height: 34px;
-            border-radius: 8px;
-            border: none;
-            background: rgba(255,255,255,0.04);
-            color: var(--text-secondary);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            cursor: pointer;
+        .read-more-btn:hover {
+            background: var(--bg-tag-hover);
+            color: var(--text-primary);
         }
-
-        .project-card:hover .details-btn { display: inline-flex; }
 
         .project-thumbnail {
             height: 160px;
@@ -566,12 +526,11 @@
         }
 
         .project-content {
-            padding: 12px 14px 16px;
+            padding: 14px 16px 16px;
             flex: 1;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
-            gap: 4px;
+            gap: 6px;
         }
 
         .project-meta {
@@ -593,55 +552,25 @@
         }
 
         .project-title {
-            font-size: 0.95rem;
+            font-size: var(--font-size-md);
             font-weight: 600;
-            color: var(--text-primary);
             margin: 0;
-            line-height: 1.18;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            min-height: 2.36em;
+            line-height: 1.3;
+        }
+
+        .project-title a {
+            color: var(--text-primary);
         }
 
         .project-role {
             font-size: var(--font-size-sm);
             color: var(--text-secondary);
-            line-height: 1.45;
-            margin: 0;
+            line-height: 1.55;
+            margin: 0 0 var(--spacing-md);
             display: -webkit-box;
             -webkit-line-clamp: 4; /* stable preview lines */
             -webkit-box-orient: vertical;
             overflow: hidden;
-            text-overflow: ellipsis;
-            min-height: 6.4em;
-            position: relative;
-        }
-
-        /* subtle gradient fade to indicate truncation (very light) */
-        .project-role::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 24px;
-            background: linear-gradient(180deg, rgba(20,20,20,0) 0%, rgba(20,20,20,0.10) 100%);
-            pointer-events: none;
-            transition: opacity 160ms ease;
-        }
-
-        /* hide fade when expanded (hover) */
-        .project-card:hover .project-role::after {
-            opacity: 0;
-        }
-
-        .project-card:hover .project-role {
-            display: block;
-            -webkit-line-clamp: unset;
-            overflow: visible;
-            min-height: 0;
         }
 
         /* ========================================
@@ -820,14 +749,14 @@
         .certification-card:hover {
             border-color: var(--border-light);
         }
-            margin-bottom: var(--spacing-sm);
+
         .certification-logo {
             width: 40px;
             height: 40px;
             border-radius: var(--radius-sm);
             display: flex;
             align-items: center;
-            margin-bottom: var(--spacing-xs);
+            justify-content: center;
             flex-shrink: 0;
         }
 
@@ -835,11 +764,11 @@
             background: linear-gradient(135deg, #c74634 0%, #f80000 100%);
         }
 
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .certification-logo.udemy {
+            background: linear-gradient(135deg, #a435f0 0%, #8710d8 100%);
+        }
+
+        .certification-logo.nptel {
             background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
         }
 
@@ -1019,34 +948,35 @@
         /* ========================================
            RESPONSIVE DESIGN
            ======================================== */
-                   @media (max-width: 1920px) {
-                    
-                 .main-content {
-            padding: 20px 0;
+        @media (max-width: 1240px) {
+            .main-grid {
+                gap: var(--spacing-4xl);
+            }
         }
 
-             .sidebar {
-                padding: 20px 0;
-             }
-                   }
         @media (max-width: 1024px) {
             .main-grid {
                 grid-template-columns: 1fr;
-                gap: var(--spacing-3xl);
+                gap: var(--spacing-lg);
             }
 
             .sidebar {
                 position: relative;
                 top: 0;
+                max-height: none;
+                padding-bottom: 0;
             }
 
-
             .profile-card {
-                max-width: 400px;
+                max-width: 480px;
                 margin: 0 auto;
             }
 
-            .projects-grid,
+            .project-card {
+                width: calc(55% - var(--spacing-lg));
+                min-width: calc(55% - var(--spacing-lg));
+            }
+
             .certifications-grid,
             .hackathons-grid {
                 grid-template-columns: 1fr;
@@ -1059,8 +989,11 @@
 
         @media (max-width: 768px) {
             .page-wrapper {
-                padding: 32px;
-                max-width: 100%;
+                padding: 0 var(--spacing-xl);
+            }
+
+            .main-content {
+                padding-top: 0;
             }
 
             .experience-card,
@@ -1068,9 +1001,7 @@
                 flex-direction: column;
                 gap: var(--spacing-lg);
             }
-.main-grid{
-    padding-right: 0;
-}
+
             .experience-header,
             .education-header {
                 flex-direction: column;
@@ -1087,27 +1018,20 @@
             }
         }
 
-        @media (max-width: 480px) {
-            .profile-card {
-                padding: 0;
-                max-width: 100%;
+        @media (max-width: 640px) {
+            .project-card {
+                width: 85%;
+                min-width: 85%;
             }
+        }
 
+        @media (max-width: 480px) {
             .profile-name {
                 font-size: var(--font-size-xl);
             }
 
             .section-title {
                 font-size: var(--font-size-md);
-            }
-
-            .main-grid{
-                display: block;
-                gap: 0;
-            }
-            .project-card{
-                width: 100%;
-                max-width: 90%;
             }
         }
     </style>
